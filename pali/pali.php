@@ -75,8 +75,8 @@ $pret="
 #features tr:nth-child(2){top:1.25em;}
 #features td{white-space: nowrap;}
 </style>
-<meta charset='utf-8' />
-</head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>Up-to-date information about all available fonts can be found on <a href=\"https://docs.google.com/spreadsheets/d/1xwgTAxwgn4ZAc4DBnHte0cqta1aaxe112Wh1rv9w5Yk/htmlview?gid=1195574771\" target=\"_blank\">this spreadsheet</a>. If this page isn't working, there is a <a href=\"pdf/sp-fonts-comparison-2024-03-18.pdf\">PDF version from 2024-02-14</a> (as up-to-date as this page) (<a href=\"https://jumpshare.com/s/GiVJ8RrCGjrU0XRpinhs\">alt link</a>).</p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
+<meta charset='iso-8859-1' />
+</head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>Up-to-date information about all available fonts can be found on <a href=\"https://docs.google.com/spreadsheets/d/1xwgTAxwgn4ZAc4DBnHte0cqta1aaxe112Wh1rv9w5Yk/htmlview?gid=1195574771\" target=\"_blank\">this spreadsheet</a>. If this page isn't working, there is a <a href=\"pdf/sp-fonts-comparison-2024-03-18.pdf\">PDF version from 2024-02-14</a> (<a href=\"https://jumpshare.com/s/GiVJ8RrCGjrU0XRpinhs\">alt link</a>). This page was updated ".date("Y-m-d").".</p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
 		<table><tbody><tr><th colspan=\"3\" class=\"ucsur\"><a href=\"https://www.kreativekorp.com/ucsur/charts/sitelen.html\" target=\"_blank\">UCSUR</a>-compliant glyphs have a grey background</td></th></tr>
         <tr class=\"noprint\"><th rowspan=\"6\">styles</th><td><label for=\"check1\">handwritten</label></td><td><input autocomplete=\"off\" id=\"check1\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('hand')){document.body.classList.remove('hand');}else{document.body.classList.add('hand');}return true;\"></td></tr>
         <tr class=\"noprint\"><td><label for=\"check2\">uniform line weight</label></td><td><input autocomplete=\"off\" id=\"check2\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('uni')){document.body.classList.remove('uni');}else{document.body.classList.add('uni');}return true;\"></td></tr>
@@ -136,7 +136,7 @@ $finput='</tbody></table>
 <label for="nasinsitelen"><b>font: </b></label><select autocomplete="off" onchange="document.getElementById(\'jo\').className=\'sp \'+document.getElementById(\'nasinsitelen\').value;" id="nasinsitelen">
     <option value="" selected disabled>select font</option>';
 $bodyend='</select><br>
-<textarea id=\'jo\' class="sp pumono" style="min-width:8em;">toki</textarea><br><button type="button" onclick="ucsur();">ASCII to UCSUR/UCSUR to ASCII</button><p>fonts not loading for some reason? try <a href="autofont.html">the other input field</a></p></div>
+<textarea id=\'jo\' class="sp nasinsitelenpumono" style="min-width:8em;">toki</textarea><br><button type="button" onclick="ucsur();">ASCII to UCSUR/UCSUR to ASCII</button><p>fonts not loading for some reason? try <a href="autofont.html">the other input field</a></p></div>
 <script>
     var combin="‍";
     const nimi=["a", "akesi", "ala", "alasa", "ale", "anpa", "ante", "anu", "awen", "e", "en", "esun", "ijo", "ike", "ilo", "insa", "jaki", "jan", "jelo", "jo", "kala", "kalama", "kama", "kasi", "ken", "kepeken", "kili", "kiwen", "ko", "kon", "kule", "kulupu", "kute", "la", "lape", "laso", "lawa", "len", "lete", "li", "lili", "linja", "lipu", "loje", "lon", "luka", "lukin", "lupa", "ma", "mama", "mani", "meli", "mi", "mije", "moku", "moli", "monsi", "mu", "mun", "musi", "mute", "nanpa", "nasa", "nasin", "nena", "ni", "nimi", "noka", "o", "olin", "ona", "open", "pakala", "pali", "palisa", "pan", "pana", "pi", "pilin", "pimeja", "pini", "pipi", "poka", "poki", "pona", "pu", "sama", "seli", "selo", "seme", "sewi", "sijelo", "sike", "sin", "sina", "sinpin", "sitelen", "sona", "soweli", "suli", "suno", "supa", "suwi", "tan", "taso", "tawa", "telo", "tenpo", "toki", "tomo", "tu", "unpa", "uta", "utala", "walo", "wan", "waso", "wawa", "weka", "wile", "namako", "kin", "oko", "kipisi", "leko", "monsuta", "tonsi", "jasima", "kijetesantakalu", "soko", "meso", "epiku", "kokosila", "lanpan", "n", "misikeke", "ku", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "pake", "apeja", "majuna", "powe", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
@@ -505,11 +505,14 @@ foreach ($finfo as $line){
     }
     array_push($globalfonts[$style],array($font,$fontvar));
     
-/*populate the 2 font info tables*/    $tinfo.="<tr><th>".$font."</th><td>".$author."</td><td>".$license."</td><td>".$range."</td><td>".$ucsur."</td><td>".$ligatures."</td><td>".$cartouches."</td><td>".$combos."</td><td>".$longpi."</td><td>".$additional."</td><td>".$notes."</td></tr>
-        ";
+/*populate the 2 font info tables*/    
+if(!ctype_space(" ".$font.$author.$license.$range.$ucsur.$ligatures.$cartouches.$combos.$longpi.$additional.$notes)){
+$tinfo.="<tr><th>".$font."</th><td>".$author."</td><td>".$license."</td><td>".$range."</td><td>".$ucsur."</td><td>".$ligatures."</td><td>".$cartouches."</td><td>".$combos."</td><td>".$longpi."</td><td>".$additional."</td><td>".$notes."</td></tr>
+        ";}
+if(!ctype_space(" ".$font.$cartouche1.$cartouche2.$comboscal.$combosta.$comboz.$pi1.$pi2.$long)){
 $tfeature.="
     <tr class='".$fontvar."'><th>".$font."</th><td class='".$cartouche1c."'>".$cartouche1."</td><td class='".$cartouche2c."'>".$cartouche2."</td><td class='".$comboscalc."'>".$comboscal."</td><td class='".$combostac."'>".$combosta."</td><td class='".$combozc."'>".$comboz."</td><td class='".$pi1c."'>".$pi1."</td><td class='".$pi2c."'>".$pi2."</td><td class='".$longc."'>".$long."</td></tr>
-        ";
+        ";}
 
         $glyph=array_map('str_getcsv', file($glyphs.rawurlencode($font).".csv"));
         foreach($glyph as $cell){
@@ -529,7 +532,7 @@ $tfeature.="
 }
 
 
-ksort($globalwords);
+uksort($globalwords,"strnatcasecmp");
 $words=array_keys($globalwords);
 $definitions=array_merge($nimipu,$nimikusuli,$nimikulili,$nimiante);
 
@@ -742,6 +745,6 @@ foreach ($isfont as $font){
 /*put together the page*/
 $body=$bodystart.$floadcss.$fdiscss.$ffamilcss.$ftabchcss.$pret.$tpu.$tkusuli.$tkulili.$tante.$tnamako.$tinfo.$tfeature.$finput.$bodyend;
 /*echo $body;*/
-file_put_contents(__DIR__ . "/../index.html",$body);
+file_put_contents(__DIR__ . "/../index.html", iconv('ISO-8859-1', 'UTF-8', $body));
 echo "<a href='../index.html'>Finished</a>";
 ?>
