@@ -509,7 +509,7 @@ foreach ($finfo as $line){
 if(!ctype_space(" ".$font.$author.$license.$range.$ucsur.$ligatures.$cartouches.$combos.$longpi.$additional.$notes)){
 $tinfo.="<tr><th>".$font."</th><td>".$author."</td><td>".$license."</td><td>".$range."</td><td>".$ucsur."</td><td>".$ligatures."</td><td>".$cartouches."</td><td>".$combos."</td><td>".$longpi."</td><td>".$additional."</td><td>".$notes."</td></tr>
         ";}
-if(!ctype_space(" ".$font.$cartouche1.$cartouche2.$comboscal.$combosta.$comboz.$pi1.$pi2.$long)){
+if(!ctype_space(" ".$cartouche1.$cartouche2.$comboscal.$combosta.$comboz.$pi1.$pi2.$long)){
 $tfeature.="
     <tr class='".$fontvar."'><th>".$font."</th><td class='".$cartouche1c."'>".$cartouche1."</td><td class='".$cartouche2c."'>".$cartouche2."</td><td class='".$comboscalc."'>".$comboscal."</td><td class='".$combostac."'>".$combosta."</td><td class='".$combozc."'>".$comboz."</td><td class='".$pi1c."'>".$pi1."</td><td class='".$pi2c."'>".$pi2."</td><td class='".$longc."'>".$long."</td></tr>
         ";}
