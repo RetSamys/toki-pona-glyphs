@@ -56,7 +56,9 @@ $fdiscss="    body{padding:1em;}
 $ffamilcss="
 
 ";
-$ftabchcss="";
+$ftabchcss="
+
+";
 $pret="
 {
     display:none;
@@ -72,7 +74,9 @@ $pret="
 }
 #features tr:nth-child(2){top:1.25em;}
 #features td{white-space: nowrap;}
-</style></head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>Up-to-date information about all available fonts can be found on <a href=\"https://docs.google.com/spreadsheets/d/1xwgTAxwgn4ZAc4DBnHte0cqta1aaxe112Wh1rv9w5Yk/htmlview?gid=1195574771\" target=\"_blank\">this spreadsheet</a>. If this page isn't working, there is a <a href=\"pdf/sp-fonts-comparison-2024-03-18.pdf\">PDF version from 2024-02-14</a> (as up-to-date as this page) (<a href=\"https://jumpshare.com/s/GiVJ8RrCGjrU0XRpinhs\">alt link</a>).</p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
+</style>
+<meta charset='utf-8' />
+</head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>Up-to-date information about all available fonts can be found on <a href=\"https://docs.google.com/spreadsheets/d/1xwgTAxwgn4ZAc4DBnHte0cqta1aaxe112Wh1rv9w5Yk/htmlview?gid=1195574771\" target=\"_blank\">this spreadsheet</a>. If this page isn't working, there is a <a href=\"pdf/sp-fonts-comparison-2024-03-18.pdf\">PDF version from 2024-02-14</a> (as up-to-date as this page) (<a href=\"https://jumpshare.com/s/GiVJ8RrCGjrU0XRpinhs\">alt link</a>).</p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
 		<table><tbody><tr><th colspan=\"3\" class=\"ucsur\"><a href=\"https://www.kreativekorp.com/ucsur/charts/sitelen.html\" target=\"_blank\">UCSUR</a>-compliant glyphs have a grey background</td></th></tr>
         <tr class=\"noprint\"><th rowspan=\"6\">styles</th><td><label for=\"check1\">handwritten</label></td><td><input autocomplete=\"off\" id=\"check1\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('hand')){document.body.classList.remove('hand');}else{document.body.classList.add('hand');}return true;\"></td></tr>
         <tr class=\"noprint\"><td><label for=\"check2\">uniform line weight</label></td><td><input autocomplete=\"off\" id=\"check2\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('uni')){document.body.classList.remove('uni');}else{document.body.classList.add('uni');}return true;\"></td></tr>
@@ -489,6 +493,7 @@ foreach ($finfo as $line){
     if ($fcount>0){
     /*add fonts as variables*/
         $fontvar=preg_replace("/[^a-zA-Z0-9]+/", "", strtolower($font));
+        if(is_numeric(substr($fontvar,0,1))){$fontvar="sp".$fontvar;}
     $floadcss.="    @font-face{
 		font-family:".$fontvar.";
         src:url(src/".$file.");
@@ -570,14 +575,14 @@ foreach($styles as $stylum){
         $cfnamako=0;
         
         foreach($words as $word){
-            if(!ctype_space($globalwords[$word][$stylum[0]][$font[0]]["char"][0])){
+            if(!ctype_space(" ".$globalwords[$word][$stylum[0]][$font[0]]["char"][0])){
                 if(array_key_exists($word,$nimipu)){
                     $cfpu+=1;
                 }else if(array_key_exists($word,$nimikusuli)){
                     $cfkusuli+=1;
                 }else if(array_key_exists($word,$nimikulili)){
                     $cfkulili+=1;
-                }else if(array_key_exists($word,$niminamako)){
+                }else if(in_array($word,$niminamako)){
                     $cfnamako+=1;
                 }else{
                     $cfante+=1;
@@ -661,7 +666,7 @@ foreach($words as $word){
         $tkusuli.=$tline;
     }else if(array_key_exists($word,$nimikulili)){
         $tkulili.=$tline;
-    }else if(array_key_exists($word,$niminamako)){
+    }else if(in_array($word,$niminamako)){
         $tnamako.=$tline;
     }else{
         $tante.=$tline;
@@ -720,15 +725,15 @@ $fdiscss.="
 
 /*not displaying fonts in a table that have no content*/
 $copen=true;
-foreach ($isfont as $font=>$tbl){
-    foreach($tbl as $tft=>$tval){
+foreach ($isfont as $font){
+    foreach($font as $tft=>$tval){
         if ($tval==false){
             if($copen){
                 $copen=false;
             }else{
                 $ftabchcss.=",";
             }
-            $ftabchcss.="#".$tval." td:nth-child(".$tbl["number"]."),#".$tval." th:nth-child(".$tbl["number"].")";
+            $ftabchcss.="#".$tft." td:nth-child(".$font["number"]."),#".$tft." th:nth-child(".$font["number"].")";
         }
     }
 }
