@@ -1,5 +1,5 @@
 a,ucsur,&#xF1900;,aa,aaa,a?,a!?
-akesi,ucsur,&#xF1901;
+akesi,ucsur,&#xF1901;akesi1
 ala,ucsur,&#xF1902;
 alasa,ucsur,&#xF1903;
 ale,ucsur,&#xF1904;
@@ -14,7 +14,7 @@ ijo,ucsur,&#xF190c;
 ike,ucsur,&#xF190d;
 ilo,ucsur,&#xF190e;
 insa,ucsur,&#xF190f;
-jaki,ucsur,&#xF1910;
+jaki,ucsur,&#xF1910;,jaki1,jaki2,jaki3,jaki4,jaki5,jaki6,jaki7,jaki8
 jan,ucsur,&#xF1911;
 jelo,ucsur,&#xF1912;
 jo,ucsur,&#xF1913;
@@ -26,7 +26,7 @@ ken,ucsur,&#xF1918;
 kepeken,ucsur,&#xF1919;
 kili,ucsur,&#xF191a;
 kiwen,ucsur,&#xF191b;
-ko,ucsur,&#xF191c;,ko1
+ko,ucsur,&#xF191c;,ko1,ko2,ko3,ko4,ko5,ko6,ko7,ko8
 kon,ucsur,&#xF191d;
 kule,ucsur,&#xF191e;
 kulupu,ucsur,&#xF191f;
@@ -128,7 +128,7 @@ ku,ucsur,&#xF1988;
 lanpan,ucsur,&#xF1985;,lanpan1
 leko,ucsur,&#xF197c;
 meso,ucsur,&#xF1982;
-misikeke,ucsur,&#xF1987;
+misikeke,ucsur,&#xF1987;,misikeke1
 monsuta,ucsur,&#xF197d;
 n,ucsur,&#xF1986;
 namako,ucsur,&#xF1978;,namako1
@@ -142,6 +142,9 @@ powe,ucsur,&#xF19a3;
 su,,su
 te,,te
 to,,to
+kiki,,kiki
+wa,,wa
+lnluwi,,linluwi,linluwi1
 cartouche open,ucsur,&#xf1990;
 cartouche end,ucsur,&#xf1991;
 cartouche extension,ucsur,&#xf1992;
