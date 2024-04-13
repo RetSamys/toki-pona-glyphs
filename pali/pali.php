@@ -464,30 +464,31 @@ foreach ($finfo as $line){
     $author=$line[3];
     $license=$line[4];
     $range=$line[5];
-    $ucsur=$line[6];
-    $ligatures=$line[7];
-    $cartouches=$line[8];
-    $combos=$line[9];
-    $longpi=$line[10];
-    $additional=$line[11];
-    $notes=$line[12];
+    $prop=$line[6];
+    $ucsur=$line[7];
+    $ligatures=$line[8];
+    $cartouches=$line[9];
+    $combos=$line[10];
+    $longpi=$line[11];
+    $additional=$line[12];
+    $notes=$line[13];
 
-    $cartouche1=$line[13];
-    $cartouche1c=$line[14];
-    $cartouche2=$line[15];
-    $cartouche2c=$line[16];
-    $comboscal=$line[17];
-    $comboscalc=$line[18];
-    $combosta=$line[19];
-    $combostac=$line[20];
-    $comboz=$line[21];
-    $combozc=$line[22];
-    $pi1=$line[23];
-    $pi1c=$line[24];
-    $pi2=$line[25];
-    $pi2c=$line[26];
-    $long=$line[27];
-    $longc=$line[28];
+    $cartouche1=$line[14];
+    $cartouche1c=$line[15];
+    $cartouche2=$line[16];
+    $cartouche2c=$line[17];
+    $comboscal=$line[18];
+    $comboscalc=$line[19];
+    $combosta=$line[20];
+    $combostac=$line[21];
+    $comboz=$line[22];
+    $combozc=$line[23];
+    $pi1=$line[24];
+    $pi1c=$line[25];
+    $pi2=$line[26];
+    $pi2c=$line[27];
+    $long=$line[28];
+    $longc=$line[29];
 
 
     if ($fcount>0){
@@ -506,8 +507,8 @@ foreach ($finfo as $line){
     array_push($globalfonts[$style],array($font,$fontvar));
     
 /*populate the 2 font info tables*/    
-if(!ctype_space(" ".$font.$author.$license.$range.$ucsur.$ligatures.$cartouches.$combos.$longpi.$additional.$notes)){
-$tinfo.="<tr><th>".$font."</th><td>".$author."</td><td>".$license."</td><td>".$range."</td><td>".$ucsur."</td><td>".$ligatures."</td><td>".$cartouches."</td><td>".$combos."</td><td>".$longpi."</td><td>".$additional."</td><td>".$notes."</td></tr>
+if(!ctype_space(" ".$font.$author.$license.$range.$prop.$ucsur.$ligatures.$cartouches.$combos.$longpi.$additional.$notes)){
+$tinfo.="<tr><th>".$font."</th><td>".$author."</td><td>".$license."</td><td>".$range."</td><td>".$prop."</td><td>".$ucsur."</td><td>".$ligatures."</td><td>".$cartouches."</td><td>".$combos."</td><td>".$longpi."</td><td>".$additional."</td><td>".$notes."</td></tr>
         ";}
 if(!ctype_space(" ".$cartouche1.$cartouche2.$comboscal.$combosta.$comboz.$pi1.$pi2.$long)){
 $tfeature.="
@@ -525,7 +526,7 @@ $tfeature.="
         }
         
     }else{
-        $fcount=$fcount+1;$tinfo.="<tr><th>".$font."</th><th>".$author."</th><th>".$license."</th><th>".$range."</th><th>".$ucsur."</th><th>".$ligatures."</th><th>".$cartouches."</th><th>".$combos."</th><th>".$longpi."</th><th>".$additional."</th><th>".$notes."</th></tr>
+        $fcount=$fcount+1;$tinfo.="<tr><th>".$font."</th><th>".$author."</th><th>".$license."</th><th>".$range."</th><th>".$prop."</th><th>".$ucsur."</th><th>".$ligatures."</th><th>".$cartouches."</th><th>".$combos."</th><th>".$longpi."</th><th>".$additional."</th><th>".$notes."</th></tr>
         ";
     }
 
