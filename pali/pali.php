@@ -10,6 +10,7 @@ $wkusuli=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-gly
 $wkulili=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/kulili.csv"));
 $wante=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/ante.csv"));
 $wnamako=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/namako.csv"));
+$wrad=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/radicals.csv"));
 $glyphs="https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/glyphs/";
 
 /*prepare the different parts of the page*/
@@ -76,7 +77,7 @@ $pret="
 #features td{white-space: nowrap;}
 </style>
 <meta charset='iso-8859-1' />
-</head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>Up-to-date information about all available fonts can be found on <a href=\"https://docs.google.com/spreadsheets/d/1xwgTAxwgn4ZAc4DBnHte0cqta1aaxe112Wh1rv9w5Yk/htmlview?gid=1195574771\" target=\"_blank\">this spreadsheet</a>. If this page isn't working, there is a <a href=\"pdf/sp-fonts-comparison-2024-03-18.pdf\">PDF version from 2024-02-14</a> (<a href=\"https://jumpshare.com/s/GiVJ8RrCGjrU0XRpinhs\">alt link</a>). This page was updated ".date("Y-m-d").".</p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
+</head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>Up-to-date information about all available fonts can be found on <a href=\"https://docs.google.com/spreadsheets/d/1xwgTAxwgn4ZAc4DBnHte0cqta1aaxe112Wh1rv9w5Yk/htmlview?gid=1195574771\" target=\"_blank\">this spreadsheet</a>. If this page isn't working, there is a <a href=\"pdf/sp-fonts-comparison-2024-03-18.pdf\">PDF version from 2024-02-14</a> (<a href=\"https://jumpshare.com/s/GiVJ8RrCGjrU0XRpinhs\">alt link</a>). This page was updated ".date("Y-m-d").".</p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#rad\">radicals</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
 		<table><tbody><tr><th colspan=\"3\" class=\"ucsur\"><a href=\"https://www.kreativekorp.com/ucsur/charts/sitelen.html\" target=\"_blank\">UCSUR</a>-compliant glyphs have a grey background</td></th></tr>
         <tr class=\"noprint\"><th rowspan=\"6\">styles</th><td><label for=\"check1\">handwritten</label></td><td><input autocomplete=\"off\" id=\"check1\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('hand')){document.body.classList.remove('hand');}else{document.body.classList.add('hand');}return true;\"></td></tr>
         <tr class=\"noprint\"><td><label for=\"check2\">uniform line weight</label></td><td><input autocomplete=\"off\" id=\"check2\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('uni')){document.body.classList.remove('uni');}else{document.body.classList.add('uni');}return true;\"></td></tr>
@@ -115,6 +116,13 @@ $tnamako='</tbody></table>
 
 <h2>special characters</h2>
 <table class="sp" id="namako"><tbody>
+    <tr class="noprint insa"><th>style</th>';
+
+$trad='</tbody></table>
+
+
+<h2>radicals</h2>
+<table class="sp" id="rad"><tbody>
     <tr class="noprint insa"><th>style</th>';
 
 $tinfo='</tbody></table>
@@ -436,6 +444,7 @@ $nimikusuli=[];
 $nimikulili=[];
 $nimiante=[];
 $niminamako=[];
+$nimirad=[];
 
 foreach ($wpu as $word){
     $nimipu[$word[0]]=$word[1];
@@ -451,6 +460,9 @@ foreach ($wante as $word){
 }
 foreach ($wnamako as $word){
     array_push($niminamako,$word[0]);
+}
+foreach ($wrad as $rad){
+    array_push($nimirad,$rad[0]);
 }
 
 $globalwords=[];
@@ -565,18 +577,21 @@ foreach($styles as $stylum){
     $tkulili.=$tline;
     $tante.=$tline;
     $tnamako.=$tline;
+    $trad.=$tline;
     $stfonts=$globalfonts[$stylum[0]];/*sort($stfonts);*/
     $cpu=0;
     $ckusuli=0;
     $ckulili=0;
     $cante=0;
     $cnamako=0;
+    $crad=0;
     foreach($stfonts as $font){
         $cfpu=0;
         $cfkusuli=0;
         $cfkulili=0;
         $cfante=0;
         $cfnamako=0;
+        $cfrad=0;
         
         foreach($words as $word){
             if(!ctype_space(" ".$globalwords[$word][$stylum[0]][$font[0]]["char"][0])){
@@ -588,6 +603,8 @@ foreach($styles as $stylum){
                     $cfkulili+=1;
                 }else if(in_array($word,$niminamako)){
                     $cfnamako+=1;
+                }else if(in_array($word,$nimirad)){
+                    $cfrad+=1;
                 }else{
                     $cfante+=1;
                 }
@@ -598,11 +615,13 @@ foreach($styles as $stylum){
         if($cfkulili>0){$ckulili+=1;$isfont[$font[0]]["kulili"]=true;}else{$isfont[$font[0]]["kulili"]=false;}
         if($cfante>0){$cante+=1;$isfont[$font[0]]["ante"]=true;}else{$isfont[$font[0]]["ante"]=false;}
         if($cfnamako>0){$cnamako+=1;$isfont[$font[0]]["namako"]=true;}else{$isfont[$font[0]]["namako"]=false;}
+        if($cfrad>0){$crad+=1;$isfont[$font[0]]["rad"]=true;}else{$isfont[$font[0]]["rad"]=false;}
     }
     $tpu.=$cpu;
     $tkusuli.=$ckusuli;
     $tkulili.=$ckulili;
     $tnamako.=$cnamako;
+    $trad.=$crad;
     $tante.=$cante;
     $tline='" class="'.$stylum[0].'">'.$stylum[1]."</td>";
     $tpu.=$tline;
@@ -610,6 +629,7 @@ foreach($styles as $stylum){
     $tkulili.=$tline;
     $tante.=$tline;
     $tnamako.=$tline;
+    $trad.=$tline;
 }
 
     $tline="</tr>
@@ -633,6 +653,7 @@ foreach($styles as $stylum){
     $tkulili.=$tline;
     $tante.=$tline;
     $tnamako.=$tline;
+    $trad.=$tline;
     $tline.="</tr>
     ";
 
@@ -672,6 +693,8 @@ foreach($words as $word){
         $tkulili.=$tline;
     }else if(in_array($word,$niminamako)){
         $tnamako.=$tline;
+    }else if(in_array($word,$nimirad)){
+        $trad.=$tline;
     }else{
         $tante.=$tline;
     }
@@ -744,7 +767,7 @@ foreach ($isfont as $font){
 
 
 /*put together the page*/
-$body=$bodystart.$floadcss.$fdiscss.$ffamilcss.$ftabchcss.$pret.$tpu.$tkusuli.$tkulili.$tante.$tnamako.$tinfo.$tfeature.$finput.$bodyend;
+$body=$bodystart.$floadcss.$fdiscss.$ffamilcss.$ftabchcss.$pret.$tpu.$tkusuli.$tkulili.$tante.$tnamako.$trad.$tinfo.$tfeature.$finput.$bodyend;
 /*echo $body;*/
 file_put_contents(__DIR__ . "/../index.html", iconv('ISO-8859-1', 'UTF-8', $body));
 echo "<a href='../index.html'>Finished</a>";
