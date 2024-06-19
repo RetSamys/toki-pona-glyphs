@@ -145,4 +145,4 @@ cartouche open,ucsur,&#xf1990;
 cartouche end,ucsur,&#xf1991;
 cartouche interpunct,,.
 cartouche colon,,:
-cartouche tally marks,,"<span style='white-space:nowrap;'>&#xf1990;&nbsp;&nbsp;,,,,&#xf1991;</span>"
+cartouche tally marks,,"<span style='white-space:nowrap;'>&#xf1990;&#xf1989;,,,,&#xf1991;</span>"
