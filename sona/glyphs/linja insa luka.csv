@@ -158,3 +158,4 @@ reverse long glyph start<br>(UCSUR only),ucsur,&#xf199a;
 reverse long glyph end<br>(UCSUR only),ucsur,&#xf199b;
 cartouche interpunct,ucsur,&#xf199c;
 cartouche colon,ucsur,&#xf199d;
+cartouche tally marks,&#xf1990;&#x3000;&zwj;5&#xf1991;
