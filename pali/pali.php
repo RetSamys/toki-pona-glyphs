@@ -79,13 +79,14 @@ $pret="
 <meta charset='iso-8859-1' />
 </head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>Up-to-date information about all available fonts can be found on <a href=\"https://docs.google.com/spreadsheets/d/1xwgTAxwgn4ZAc4DBnHte0cqta1aaxe112Wh1rv9w5Yk/htmlview?gid=1195574771\" target=\"_blank\">this spreadsheet</a>. If this page isn't working, there is a <a href=\"pdf/sp-fonts-comparison-2024-03-18.pdf\">PDF version from 2024-02-14</a> (<a href=\"https://jumpshare.com/s/GiVJ8RrCGjrU0XRpinhs\">alt link</a>). This page was updated ".date("Y-m-d").".</p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#rad\">radicals</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
 		<table><tbody><tr><th colspan=\"3\" class=\"ucsur\"><a href=\"https://www.kreativekorp.com/ucsur/charts/sitelen.html\" target=\"_blank\">UCSUR</a>-compliant glyphs have a grey background</td></th></tr>
-        <tr class=\"noprint\"><th rowspan=\"6\">styles</th><td><label for=\"check1\">handwritten</label></td><td><input autocomplete=\"off\" id=\"check1\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('hand')){document.body.classList.remove('hand');}else{document.body.classList.add('hand');}return true;\"></td></tr>
+        <tr class=\"noprint\"><th rowspan=\"7\">styles</th><td><label for=\"check1\">handwritten</label></td><td><input autocomplete=\"off\" id=\"check1\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('hand')){document.body.classList.remove('hand');}else{document.body.classList.add('hand');}return true;\"></td></tr>
         <tr class=\"noprint\"><td><label for=\"check2\">uniform line weight</label></td><td><input autocomplete=\"off\" id=\"check2\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('uni')){document.body.classList.remove('uni');}else{document.body.classList.add('uni');}return true;\"></td></tr>
         <tr class=\"noprint\"><td><label for=\"check3\">alternating line weight</label></td><td><input autocomplete=\"off\" id=\"check3\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('serif')){document.body.classList.remove('serif');}else{document.body.classList.add('serif');}return true;\"></td></tr>
         <tr class=\"noprint\"><td><label for=\"check4\">block based</label></td><td><input autocomplete=\"off\" checked id=\"check4\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('pxl')){document.body.classList.remove('pxl');}else{document.body.classList.add('pxl');}return true;\"></td></tr>
         <tr class=\"noprint\"><td><label for=\"check5\">alternative design/<br>sitelen pona inspired</label></td><td><input autocomplete=\"off\" id=\"check5\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('alt')){document.body.classList.remove('alt');}else{document.body.classList.add('alt');}return true;\"></td></tr>
         <tr class=\"noprint\"><td><label for=\"check6\">non-sitelen-pona writing systems</label></td><td><input autocomplete=\"off\" id=\"check6\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('nonsp')){document.body.classList.remove('nonsp');}else{document.body.classList.add('nonsp');}return true;\"></td></tr>
         <tr class=\"noprint\" style=\"display:none;\"><td><label for=\"check7\">definitions</label></td><td><input autocomplete=\"off\" id=\"check7\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('def')){document.body.classList.remove('def');}else{document.body.classList.add('def');}return true;\"></td></tr>
+        <tr class=\"noprint\"><td><label for=\"check8\">old font versions</label></td><td><input autocomplete=\"off\" id=\"check8\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('old')){document.body.classList.remove('old');}else{document.body.classList.add('old');}return true;\"></td></tr>
         </tbody></table>";
 
 $tpu='<h2>pu glyphs</h2>
@@ -529,12 +530,12 @@ $tfeature.="
 
         $glyph=array_map('str_getcsv', file($glyphs.rawurlencode($font).".csv"));
         foreach($glyph as $cell){
-            $globalwords[$cell[0]][$style][$font]["class"]=$cell[1];
+            $globalwords[$cell[0]][explode(" ",$style)[0]][$font]["class"]=$cell[1];
             $chars=[];
             for ($i=2;$i<count($cell);$i++){
                 array_push($chars,$cell[$i]);
             }
-            $globalwords[$cell[0]][$style][$font]["char"]=$chars;
+            $globalwords[$cell[0]][explode(" ",$style)[0]][$font]["char"]=$chars;
         }
         
     }else{
@@ -543,7 +544,6 @@ $tfeature.="
     }
 
 }
-
 
 uksort($globalwords,"strnatcasecmp");
 $words=array_keys($globalwords);
@@ -555,7 +555,12 @@ foreach($words as $word){
     foreach($styles as $style){
         if($style[0]=="no"){break;}
         /*if (!array_key_exists($style[0],$globalwords)){$globalwords[$word][$style[0]]=[];}*/
-        foreach($globalfonts[$style[0]] as $font){
+        if(isset($globalfonts[$style[0]." old"])){
+            $globalfontss=array_merge($globalfonts[$style[0]],$globalfonts[$style[0]." old"]);
+            sort($globalfontss);
+        }
+        else{$globalfontss=$globalfonts[$style[0]];}
+        foreach($globalfontss as $font){
             if (!array_key_exists($font[0],$globalwords[$word][$style[0]]??[])){
                 $globalwords[$word][$style[0]][$font[0]]["char"]=[""];
                 $globalwords[$word][$style[0]][$font[0]]["class"]="";
@@ -578,7 +583,12 @@ foreach($styles as $stylum){
     $tante.=$tline;
     $tnamako.=$tline;
     $trad.=$tline;
-    $stfonts=$globalfonts[$stylum[0]];/*sort($stfonts);*/
+    if(isset($globalfonts[$stylum[0]." old"])){
+        $stfonts=array_merge($globalfonts[$stylum[0]],$globalfonts[$stylum[0]." old"]);
+        sort($stfonts);
+    }else{
+        $stfonts=$globalfonts[$stylum[0]];
+    }
     $cpu=0;
     $ckusuli=0;
     $ckulili=0;
@@ -641,7 +651,13 @@ foreach($styles as $stylum){
         break;
     }
 
-    $stfonts=$globalfonts[$stylum[0]];
+    
+    if(isset($globalfonts[$stylum[0]." old"])){
+        $stfonts=array_merge($globalfonts[$stylum[0]],$globalfonts[$stylum[0]." old"]);
+        sort($stfonts);
+    }else{
+        $stfonts=$globalfonts[$stylum[0]];
+    }
     foreach($stfonts as $font){
         $tline.="<th>".$font[0]."</th>
                 ";
@@ -672,7 +688,13 @@ foreach($words as $word){
         if($stylum[0]=="no"){
             break;
         }
-        $stfonts=($globalfonts[$stylum[0]]);
+        
+    if(isset($globalfonts[$stylum[0]." old"])){
+        $stfonts=array_merge($globalfonts[$stylum[0]],$globalfonts[$stylum[0]." old"]);
+        sort($stfonts);
+    }else{
+        $stfonts=$globalfonts[$stylum[0]];
+    }
         /*sort($stfonts);*/
         foreach($stfonts as $font){
             if(ctype_space($globalwords[$word][$stylum[0]][$font[0]]["class"])){
@@ -725,8 +747,20 @@ foreach($styles as $stylum){
         <option value="" disabled>'.$stylum[1].'</option>';
         $ffamilcss.="/*".$stylum[0]."*/
         ";
+        
+    if(isset($globalfonts[$stylum[0]." old"])){
+        $stfonts=array_merge($globalfonts[$stylum[0]],$globalfonts[$stylum[0]." old"]);
+        sort($stfonts);
+    }else{
         $stfonts=$globalfonts[$stylum[0]];
+    }
         foreach($stfonts as $font){
+            if(isset($globalfonts[$stylum[0]." old"])&&in_array($font,$globalfonts[$stylum[0]." old"])){
+                $stylumm=$stylum[0].".old";
+            }else{
+                $stylumm=$stylum[0];
+            }
+
             $finput.='
         <option value="'.$font[1].'">'.$font[0].'</option>';
             $fcount+=1;
@@ -738,7 +772,7 @@ foreach($styles as $stylum){
             ";
                 if ($fcount>2){$fdiscss.=",";}
                 $fdiscss.="
-.".$stylum[0]." .sp td:nth-child(".$fcount."),.".$stylum[0]." .sp th:nth-child(".$fcount.")";
+.".$stylumm." .sp td:nth-child(".$fcount."),.".$stylumm." .sp th:nth-child(".$fcount.")";
             }
         }
     }else{
