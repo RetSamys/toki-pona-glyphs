@@ -1,16 +1,16 @@
 <?php
 ini_set('display_errors', 1); ini_set('display_startup_errors', 1); error_reporting(E_ALL);
-
+$tmer=time();
 /*pull data*/
-$finfo=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/fontinfo.csv"));
-$other=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/other.csv"));
-$styles=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/styles.csv"));
-$wpu=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/pu.csv"));
-$wkusuli=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/kusuli.csv"));
-$wkulili=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/kulili.csv"));
-$wante=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/ante.csv"));
-$wnamako=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/namako.csv"));
-$wrad=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/radicals.csv"));
+$finfo=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/fontinfo.csv"));echo "<p>fontinfo.csv ".(time()-$tmer)."s</p>";
+$other=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/other.csv"));echo "<p>other.csv ".(time()-$tmer)."s</p>";
+$styles=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/styles.csv"));echo "<p>styles.csv ".(time()-$tmer)."s</p>";
+$wpu=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/pu.csv"));echo "<p>pu.csv ".(time()-$tmer)."s</p>";
+$wkusuli=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/kusuli.csv"));echo "<p>kusuli.csv ".(time()-$tmer)."s</p>";
+$wkulili=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/kulili.csv"));echo "<p>kulili.csv ".(time()-$tmer)."s</p>";
+$wante=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/ante.csv"));echo "<p>ante.csv ".(time()-$tmer)."s</p>";
+$wnamako=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/namako.csv"));echo "<p>namako.csv ".(time()-$tmer)."s</p>";
+$wrad=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/radicals.csv"));echo "<p>radicals.csv ".(time()-$tmer)."s</p>";
 $glyphs="https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/glyphs/";
 
 /*prepare the different parts of the page*/
@@ -77,7 +77,7 @@ $pret="
 #features td{white-space: nowrap;}
 </style>
 <meta charset='iso-8859-1' />
-</head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>Up-to-date information about all available fonts can be found on <a href=\"https://docs.google.com/spreadsheets/d/1xwgTAxwgn4ZAc4DBnHte0cqta1aaxe112Wh1rv9w5Yk/htmlview?gid=1195574771\" target=\"_blank\">this spreadsheet</a>. If this page isn't working, there is a <a href=\"pdf/sp-fonts-comparison-2024-03-18.pdf\">PDF version from 2024-02-14</a> (<a href=\"https://jumpshare.com/s/GiVJ8RrCGjrU0XRpinhs\">alt link</a>). This page was updated ".date("Y-m-d").".</p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#rad\">radicals</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
+</head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>If this page isn't working, there is a <a href=\"pdf/sp-fonts-comparison-2024-03-18.pdf\">PDF version from 2024-02-14</a> (<a href=\"https://jumpshare.com/s/GiVJ8RrCGjrU0XRpinhs\">alt link</a>). This page was updated ".date("Y-m-d").".</p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#rad\">radicals</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
 		<table><tbody><tr><th colspan=\"3\" class=\"ucsur\"><a href=\"https://www.kreativekorp.com/ucsur/charts/sitelen.html\" target=\"_blank\">UCSUR</a>-compliant glyphs have a grey background</td></th></tr>
         <tr class=\"noprint\"><th rowspan=\"7\">styles</th><td><label for=\"check1\">handwritten</label></td><td><input autocomplete=\"off\" id=\"check1\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('hand')){document.body.classList.remove('hand');}else{document.body.classList.add('hand');}return true;\"></td></tr>
         <tr class=\"noprint\"><td><label for=\"check2\">uniform line weight</label></td><td><input autocomplete=\"off\" id=\"check2\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('uni')){document.body.classList.remove('uni');}else{document.body.classList.add('uni');}return true;\"></td></tr>
@@ -469,7 +469,7 @@ foreach ($wrad as $rad){
 $globalwords=[];
 $globalfonts=[];
 $fcount=0;
-/*get main font info*/
+/*get main font info*/echo "<p>Getting glyphs from fonts</p><p>";
 foreach ($finfo as $line){
     $font=$line[0];
     $file=$line[1];
@@ -527,8 +527,7 @@ if(!ctype_space(" ".$cartouche1.$cartouche2.$comboscal.$combosta.$comboz.$pi1.$p
 $tfeature.="
     <tr class='".$fontvar."'><th>".$font."</th><td class='".$cartouche1c."'>".$cartouche1."</td><td class='".$cartouche2c."'>".$cartouche2."</td><td class='".$comboscalc."'>".$comboscal."</td><td class='".$combostac."'>".$combosta."</td><td class='".$combozc."'>".$comboz."</td><td class='".$pi1c."'>".$pi1."</td><td class='".$pi2c."'>".$pi2."</td><td class='".$longc."'>".$long."</td></tr>
         ";}
-
-        $glyph=array_map('str_getcsv', file($glyphs.rawurlencode($font).".csv"));
+        $glyph=array_map('str_getcsv', file($glyphs.rawurlencode($font).".csv"));echo $font.".csv  ".(time()-$tmer)."s, ";
         foreach($glyph as $cell){
             $globalwords[$cell[0]][explode(" ",$style)[0]][$font]["class"]=$cell[1];
             $chars=[];
@@ -544,6 +543,7 @@ $tfeature.="
     }
 
 }
+echo "</p><p>Done.</p>";
 
 uksort($globalwords,"strnatcasecmp");
 $words=array_keys($globalwords);
@@ -697,7 +697,7 @@ foreach($words as $word){
     }
         /*sort($stfonts);*/
         foreach($stfonts as $font){
-            if(ctype_space($globalwords[$word][$stylum[0]][$font[0]]["class"])){
+            if(ctype_space(" ".$globalwords[$word][$stylum[0]][$font[0]]["class"])||[""]==$globalwords[$word][$stylum[0]][$font[0]]["char"]){
                 $tline.='<td>';
             }else{
                 $tline.='<td class="'.$globalwords[$word][$stylum[0]][$font[0]]["class"].'">';
@@ -804,5 +804,5 @@ foreach ($isfont as $font){
 $body=$bodystart.$floadcss.$fdiscss.$ffamilcss.$ftabchcss.$pret.$tpu.$tkusuli.$tkulili.$tante.$tnamako.$trad.$tinfo.$tfeature.$finput.$bodyend;
 /*echo $body;*/
 file_put_contents(__DIR__ . "/../index.html", iconv('ISO-8859-1', 'UTF-8', $body));
-echo "<a href='../index.html'>Finished</a>";
+echo "<p><a href='../index.html'>Finished</a> ".(time()-$tmer)."s</p>";
 ?>
