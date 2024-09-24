@@ -1,7 +1,7 @@
 "font","file","style","author","license","range of glyphs","proportion","UCSUR","ligatures (Latin input)","cartouches","combined glyphs","additional features","notes","cartouches","class","combined glyphs","class"
 "kiku upi ala","kiku-upi-ala.ttf","pxl","Kelsey Higham","OFL",,,"no","yes","no","no",,,,,,
 "kiku upi ala (liti)","kiku+upi+ala.ttf","pxl old","Kelsey Higham","OFL",,,"no","yes","no","no",,,,,,
-"tama ka Tumu","tama-ka-Tumu.ttf","hand","ka Kitami","OFL",,,"no","yes","yes<br>(add <pre>_!</pre> after each cartouched word)","no",,,"ka tama_uli_mi_upi_",,,
+"tama ka Tumu","tama-ka-Tumu.ttf","hand","ka Kitami","OFL",,,"no","yes","yes<br>(add <pre>_</pre> after each cartouched word)","no",,,"ka tama_uli_mi_upi_",,,
 "sitelen seli kiwen","sitelenselikiwenatuki.ttf","hand","Rebecca Bettencourt","OFL",,,"yes","yes","yes","yes",,,"ka [tama uli mi upi]","ucsur","tuki-tiki","ucsur"
 "lika lili ala","lilialab.ttf","serif","kije Enki","OFL",,,"no","yes","no","no",,,,,,
 "Fairfax","FairfaxPula.ttf","pxl","Rebecca Bettencourt","OFL",,,"yes","yes","yes","yes",,,"ka [tama uli mi upi]","ucsur","tuki-tiki","ucsur"
