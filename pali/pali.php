@@ -11,6 +11,7 @@ $wkulili=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-gly
 $wante=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/ante.csv"));echo "<p>ante.csv ".(time()-$tmer)."s</p>";
 $wnamako=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/namako.csv"));echo "<p>namako.csv ".(time()-$tmer)."s</p>";
 $wrad=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/radicals.csv"));echo "<p>radicals.csv ".(time()-$tmer)."s</p>";
+$pdf=array_map('str_getcsv', file("https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/pdf.csv"));echo "<p>pdf.csv ".(time()-$tmer)."s</p>";
 $glyphs="https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/glyphs/";
 
 /*prepare the different parts of the page*/
@@ -66,7 +67,14 @@ $pret="
     }
 
 #cvs,.insa td.hand,.insa td.uni,.insa td.serif,.insa td.pxl,.insa td.alt,.insa td.nonsp{display:none !important;}
-.hand .insa td.hand,.uni .insa td.uni,.serif .insa td.serif,.pxl .insa td.pxl,.alt .insa td.alt,.nonsp .insa td.nonsp{display:table-cell !important;}
+.hand .insa td.hand,.uni .insa td.uni,.serif .insa td.serif,.pxl .insa td.pxl,.alt .insa td.alt,.nonsp .insa td.nonsp,.func .insa .func td{display:table-cell !important;}
+
+tr.func,tr.render,tr.save,tr.funcs{display:none !important;}
+body.func tr.func,body.render tr.render,body.save tr.save,body.funcs tr.funcs{display: table-row !important;}
+
+#pokiawen{display:none;}
+
+.pokiawen #pokiawen{display:block;}
 
 .sp tr:nth-child(2),#sona tr:nth-child(1),#features tr:nth-child(1),#features tr:nth-child(2){
     background:white;
@@ -77,7 +85,7 @@ $pret="
 #features td{white-space: nowrap;}
 </style>
 <meta charset='iso-8859-1' />
-</head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>If this page isn't working, there is a <a href=\"pdf/sp-fonts-comparison-2024-03-18.pdf\">PDF version from 2024-02-14</a> (<a href=\"https://jumpshare.com/s/GiVJ8RrCGjrU0XRpinhs\">alt link</a>). This page was updated ".date("Y-m-d").".</p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#rad\">radicals</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
+</head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>If this page isn't working, there is a <a href=\"pdf/".$pdf[0][0]."\">PDF version from ".$pdf[0][1]."</a> (<a href=\"".$pdf[0][2]."\">alt link</a>). This page was updated ".date("Y-m-d").".<br><a href=\"tukitiki.html\">tuki tiki fonts</a> &middot; <a href='https://github.com/RetSamys/toki-pona-glyphs'>Github repository</a></p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#rad\">radicals</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
 		<table><tbody><tr><th colspan=\"3\" class=\"ucsur\"><a href=\"https://www.kreativekorp.com/ucsur/charts/sitelen.html\" target=\"_blank\">UCSUR</a>-compliant glyphs have a grey background</td></th></tr>
         <tr class=\"noprint\"><th rowspan=\"7\">styles</th><td><label for=\"check1\">handwritten</label></td><td><input autocomplete=\"off\" id=\"check1\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('hand')){document.body.classList.remove('hand');}else{document.body.classList.add('hand');}return true;\"></td></tr>
         <tr class=\"noprint\"><td><label for=\"check2\">uniform line weight</label></td><td><input autocomplete=\"off\" id=\"check2\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('uni')){document.body.classList.remove('uni');}else{document.body.classList.add('uni');}return true;\"></td></tr>
@@ -86,8 +94,27 @@ $pret="
         <tr class=\"noprint\"><td><label for=\"check5\">alternative design/<br>sitelen pona inspired</label></td><td><input autocomplete=\"off\" id=\"check5\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('alt')){document.body.classList.remove('alt');}else{document.body.classList.add('alt');}return true;\"></td></tr>
         <tr class=\"noprint\"><td><label for=\"check6\">non-sitelen-pona writing systems</label></td><td><input autocomplete=\"off\" id=\"check6\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('nonsp')){document.body.classList.remove('nonsp');}else{document.body.classList.add('nonsp');}return true;\"></td></tr>
         <tr class=\"noprint\" style=\"display:none;\"><td><label for=\"check7\">definitions</label></td><td><input autocomplete=\"off\" id=\"check7\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('def')){document.body.classList.remove('def');}else{document.body.classList.add('def');}return true;\"></td></tr>
-        <tr class=\"noprint\"><td><label for=\"check8\">old font versions</label></td><td><input autocomplete=\"off\" id=\"check8\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('old')){document.body.classList.remove('old');}else{document.body.classList.add('old');}return true;\"></td></tr>
-        </tbody></table>";
+        <tr class=\"noprint\"><td><label for=\"check8\">font projects</label></td><td><input autocomplete=\"off\" id=\"check8\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('old')){document.body.classList.remove('old');}else{document.body.classList.add('old');}return true;\"></td></tr>
+        <tr class=\"funcs noprint\"><td colspan='2'><label for=\"check9\" style='text-align:left'>experimental functions</label></td><td><input autocomplete=\"off\" id=\"check9\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('func')){document.body.classList.remove('func');}else{document.body.classList.add('func');}return true;\"></td></tr>
+        <tr class='func noprint'><td colspan='3'>
+            <label for='func1'>isolate font: </label><select autocomplete='off' onchange=\"document.body.classList.remove('func');singlefont(document.getElementById('func1').value);document.body.classList.add('render');\" id='func1'>
+                <option value='' selected disabled>select font</option>
+                {tablefonts}
+            </select>
+        </td></tr>
+        <tr class='func noprint'><td colspan='3'>
+            <label for='func2'>isolate word: </label><select autocomplete='off' onchange=\"document.body.classList.remove('func');singleword(document.getElementById('func2').value);document.body.classList.add('render');\" id='func2'>
+                <option value='' selected disabled>select word</option>
+                {tablewords}
+            </select>
+        </td></tr>
+        <tr class='render noprint'><td colspan='3'>
+            <button type='button' onclick='document.body.classList.remove(\"render\");renderall();document.body.classList.add(\"save\");' id='func3'>render to images</button> (this will take a massive amount of time)
+        </td></tr>
+        <tr class='save noprint'><td colspan='3'>
+            <button type='button' onclick='document.body.classList.remove(\"save\");downloadz();' id='func4'>save</button>
+        </td></tr>
+        </tbody></table>";$tablefonts="";$tablewords="";
 
 $tpu='<h2>pu glyphs</h2>
 <table class="sp" id="pu">
@@ -145,7 +172,7 @@ $finput='</tbody></table>
 <label for="nasinsitelen"><b>font: </b></label><select autocomplete="off" onchange="document.getElementById(\'jo\').className=\'sp \'+document.getElementById(\'nasinsitelen\').value;" id="nasinsitelen">
     <option value="" selected disabled>select font</option>';
 $bodyend='</select><br>
-<textarea id=\'jo\' class="sp nasinsitelenpumono" style="min-width:8em;">toki</textarea><br><button type="button" onclick="ucsur();">ASCII to UCSUR/UCSUR to ASCII</button><p>fonts not loading for some reason? try <a href="autofont.html">the other input field</a></p></div>
+<textarea id=\'jo\' class="sp nasinsitelenpumono" style="min-width:8em;">toki</textarea><br><button type="button" onclick="ucsur();">ASCII to UCSUR/UCSUR to ASCII</button><!--<p>fonts not loading for some reason? try <a href="autofont.html">the other input field</a></p>--></div>
 <script>
     var combin="‍";
     const nimi=["a", "akesi", "ala", "alasa", "ale", "anpa", "ante", "anu", "awen", "e", "en", "esun", "ijo", "ike", "ilo", "insa", "jaki", "jan", "jelo", "jo", "kala", "kalama", "kama", "kasi", "ken", "kepeken", "kili", "kiwen", "ko", "kon", "kule", "kulupu", "kute", "la", "lape", "laso", "lawa", "len", "lete", "li", "lili", "linja", "lipu", "loje", "lon", "luka", "lukin", "lupa", "ma", "mama", "mani", "meli", "mi", "mije", "moku", "moli", "monsi", "mu", "mun", "musi", "mute", "nanpa", "nasa", "nasin", "nena", "ni", "nimi", "noka", "o", "olin", "ona", "open", "pakala", "pali", "palisa", "pan", "pana", "pi", "pilin", "pimeja", "pini", "pipi", "poka", "poki", "pona", "pu", "sama", "seli", "selo", "seme", "sewi", "sijelo", "sike", "sin", "sina", "sinpin", "sitelen", "sona", "soweli", "suli", "suno", "supa", "suwi", "tan", "taso", "tawa", "telo", "tenpo", "toki", "tomo", "tu", "unpa", "uta", "utala", "walo", "wan", "waso", "wawa", "weka", "wile", "namako", "kin", "oko", "kipisi", "leko", "monsuta", "tonsi", "jasima", "kijetesantakalu", "soko", "meso", "epiku", "kokosila", "lanpan", "n", "misikeke", "ku", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "pake", "apeja", "majuna", "powe", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""];
@@ -237,9 +264,13 @@ function nimirender(x){
     document.body.appendChild(d);
     d=document.getElementById("pokiawen") ;
     var isx=nimid(x);
-    if(!(isx)){
+    if(false!=(isx)){
         for(var i=0;i<isx.length;i++){
-            try{renderglyph(isx[i],x,);}catch(e){console.log(i);}
+            try{
+                renderglyph(isx[i],x,window.getComputedStyle(isx[i])["font-family"]);
+            }catch(e){
+                console.log(i);
+            }
         }
     }
 }
@@ -252,13 +283,20 @@ function nimid(x){
             for(var j=2;j<nimis.length;j++){
                 var curnimi=nimis[j].getElementsByTagName("th")[0].innerText;
                 if (curnimi==x){
-                    return nimis[j].getElementsByTagName("td");
+                    var toreturn=[];
+                    for (var k=0;k<nimis[j].getElementsByTagName("td").length;k++){
+                        if(window.getComputedStyle(nimis[j].getElementsByTagName("td")[k])["display"]!="none"){
+                            toreturn.push(nimis[j].getElementsByTagName("td")[k]);
+                        }
+                    }
+                    return toreturn;
                 }
             }
         }
     }
     return false;
 }
+
 
 function render(x){
     c=document.createElement("canvas");
@@ -289,6 +327,7 @@ function render(x){
     }
 }
 function renderglyph(elem,nimini,fontname){
+    nimini=nimini.replaceAll(/<[^>]*>/g, "");
     if(elem.innerText.trim().length === 0){return false;}
     if(window.getComputedStyle(elem,null).getPropertyValue("display")=="none"){return false;}
     c.width=10000;
@@ -306,11 +345,12 @@ function renderglyph(elem,nimini,fontname){
     try{
         /*cropImageFromCanvas(ctx,w=ctx.measureText(curtxt).width,h=fsize*1.4);*/
         cropImageFromCanvas(ctx);
-        var img=c.toDataURL(\'image/png\');
+        var img=c.toBlob(function(blob){
         var p=document.createElement("img");
-        p.src=img;
+        p.src=URL.createObjectURL(blob);
         p.download=fontname+"_"+nimini;
         d.appendChild(p);
+        },"image/png");
     }catch(e){console.log(fontname);}
     ctx.clearRect(0, 0, c.width, c.height);
 }
@@ -344,36 +384,120 @@ function cropImageFromCanvas(cntx,w=false,h=false) {
   canvas.height = h;
   cntx.putImageData(cut, 0, 0);
         
-  var image = canvas.toDataURL();
+  /*var image = canvas.toDataURL();*/
 }
 
-function downloadz(){
+async function downloadz(){
     var lipuawen = new JSZip();
     for (var i=0;i<pokiawen.childElementCount;i++){
-        lipuawen.file(pokiawen.children[i].download+".png",pokiawen.children[i].src.replace("data:image/png;base64,",""), {base64: true});
+     await fetch(   pokiawen.children[i].src).then(r=>lipuawen.file(pokiawen.children[i].download+".png",r.blob() ));
     }
     
-    lipuawen.generateAsync({type:"base64"}).then(function (base64) {
+    lipuawen.generateAsync({type:"blob"})
+      .then(function(content) {
         var newz=document.createElement("a");
-    newz.href="data:application/zip;base64,"+base64;
+        newz.id="dnlwdz";
+        newz.href=URL.createObjectURL(content);
     var newzt=document.createTextNode("Download ZIP");
     newz.appendChild(newzt);
     document.body.appendChild(newz);
+    document.getElementById("dnlwdz").click();
     });
 
 }
 
+
+async function renderall(){
+    e=document.createElement("p");
+    e.id="pokiawene";
+    c=document.createElement("canvas");
+    c.id="cvs";
+    document.body.appendChild(c);
+    c=document.getElementById("cvs") ;
+    ctx=c.getContext("2d", { willReadFrequently: true });
+    ctx.textBaseline ="top" ;
+    ctx.textAlign="center" ;
+    d=document.createElement("div");
+     d.id="pokiawen";
+    document.body.appendChild(d);
+    d=document.getElementById("pokiawen") ;
+    var tabs=document.getElementsByClassName("sp");
+    var todo=[];
+    for(var n=0;n<tabs.length;n++){
+        if(tabs[n].tagName!="TABLE"){continue;}
+        if(window.getComputedStyle(tabs[n]).display=="none"){continue;}
+        var tabl=tabs[n];
+        var trow=tabl.getElementsByTagName("tr");
+        for(var m=2;m<trow.length;m++){
+            if(window.getComputedStyle(trow[m]).display=="none"){continue;}
+            var tcel=trow[m].getElementsByTagName("td");
+            for (var l=0;l<tcel.length;l++){
+                if(window.getComputedStyle(tcel[l]).display=="none"||tcel[l].innerHTML.trim()==""){continue;}
+                todo.push([tcel[l],tcel[l].parentElement.children[0].innerText,window.getComputedStyle(tcel[l])["font-family"]]);
+            }
+        }
+    }
+    e.innerHTML+="<a onclick=\'document.body.classList.add(\\"pokiawen\\");\' href=\\"#\\">Found "+todo.length+"</a>";
+    setTimeout(function(){ document.body.appendChild(e); }, 0);
+    for(n=0;n<todo.length;n++){
+        await renderglyph(todo[n][0],todo[n][1],todo[n][2]);
+    }
+    document.getElementById("pokiawene").remove() ;
+}
+
+function singleword(wordname){
+    document.body.classList.add("old");document.body.classList.add("nonsp");document.body.classList.add("alt");document.body.classList.add("pxl");document.body.classList.add("serif");document.body.classList.add("uni");document.body.classList.add("hand");
+    var tabs=document.getElementsByClassName("sp");
+    var npr=document.getElementsByClassName("noprint");
+    for(var n=0;n<npr.length;n++){
+            if(!(npr[n].classList.contains("render")||npr[n].classList.contains("save"))){
+                npr[n].style.setProperty("display","none","important");
+            }
+        }
+    document.getElementById("features").style.display="none";
+    document.getElementById("features").previousElementSibling.style.display="none";
+    var found=false;
+    for(n=0;n<tabs.length;n++){
+        var foundhere=false;
+        if(tabs[n].tagName!="TABLE"){continue;}
+        if(found){
+            tabs[n].style.setProperty("display","none","important");
+            tabs[n].previousElementSibling.style.display="none";
+        }else{
+            var tabl=tabs[n];
+            var trow=tabl.getElementsByTagName("tr");
+            for(var m=2;m<trow.length;m++){
+                if (trow[m].children[0].innerHTML.replaceAll("+"," ").toLowerCase()==wordname.replaceAll("+"," ").toLowerCase()){
+                    foundhere=true;
+                }else{
+                    trow[m].style.setProperty("display","none","important");
+                }
+            }
+            if(foundhere==false){
+                tabs[n].style.setProperty("display","none","important");
+                tabs[n].previousElementSibling.style.display="none";
+            }else{
+                found=true;
+            }
+        }
+    }
+    window.history.pushState({singleword:wordname.replaceAll("+"," ").toLowerCase()},wordname.replaceAll("+"," ").toLowerCase(),"?singleword="+wordname.replaceAll(" ","+").toLowerCase());
+}
+
 function singlefont(fontname){
+    document.body.classList.add("old");document.body.classList.add("nonsp");document.body.classList.add("alt");document.body.classList.add("pxl");document.body.classList.add("serif");document.body.classList.add("uni");document.body.classList.add("hand");
     var flist=document.getElementById("pu").children[0].children[1].children;
     var fnum=0;
     for(var i=0;i<flist.length;i++){
-        if(fontname==flist[i].innerHTML){fnum=i;break;}
+        if(fontname.replaceAll("+"," ").toLowerCase()==flist[i].innerHTML.replaceAll("+"," ").toLowerCase()){fnum=i;break;}
     }
     if (fnum>0){
         var tabs=document.getElementsByClassName("sp");
         var npr=document.getElementsByClassName("noprint");
         for(var n=0;n<npr.length;n++){
+        if(!(npr[n].classList.contains("render")||npr[n].classList.contains("save"))){
             npr[n].style.setProperty("display","none","important");
+        }
         }
         document.getElementById("features").style.display="none";
         document.getElementById("features").previousElementSibling.style.display="none";
@@ -408,10 +532,13 @@ function singlefont(fontname){
                 tabl.style.display="none";
             }
         }
+        window.history.pushState({singlefont:fontname.replaceAll("+"," ")},fontname.replaceAll("+"," "),"?singlefont="+fontname.replaceAll(" ","+"));
     }
 }
+document.body.classList.add("funcs");
 var q=new URLSearchParams(window.location.search);
 if(q.get("singlefont")){singlefont(q.get("singlefont"));}
+else if(q.get("singleword")){singleword(q.get("singleword"));document.body.classList.remove("func");document.body.classList.add("render");}
 </script>
 
 
@@ -520,7 +647,7 @@ foreach ($finfo as $line){
     array_push($globalfonts[$style],array($font,$fontvar));
     
 /*populate the 2 font info tables*/    
-if(!ctype_space(" ".$font.$author.$license.$range.$prop.$ucsur.$ligatures.$cartouches.$combos.$longpi.$additional.$notes)){
+if(!ctype_space(" ".$author.$license.$range.$prop.$ucsur.$ligatures.$cartouches.$combos.$longpi.$additional.$notes)){
 $tinfo.="<tr><th>".$font."</th><td>".$author."</td><td>".$license."</td><td>".$range."</td><td>".$prop."</td><td>".$ucsur."</td><td>".$ligatures."</td><td>".$cartouches."</td><td>".$combos."</td><td>".$longpi."</td><td>".$additional."</td><td>".$notes."</td></tr>
         ";}
 if(!ctype_space(" ".$cartouche1.$cartouche2.$comboscal.$combosta.$comboz.$pi1.$pi2.$long)){
@@ -658,12 +785,14 @@ foreach($styles as $stylum){
     }else{
         $stfonts=$globalfonts[$stylum[0]];
     }
+    $tablefonts.="<option disabled>".$stylum[1]."</option>";
     foreach($stfonts as $font){
+        $tablefonts.="<option value='".$font[0]."'>".$font[0]."</option>";
         $tline.="<th>".$font[0]."</th>
                 ";
     }
 }
-
+    $pret=str_replace("{tablefonts}",$tablefonts,$pret);
     $tpu.=$tline;
     $tkusuli.=$tline;
     $tkulili.=$tline;
@@ -684,6 +813,7 @@ foreach($words as $word){
     }
     $tline.='><th>'.$word.'</th>
     ';
+    $tablewords.="<option value='".$word."'>".$word."</option>";
     foreach($styles as $stylum){
         if($stylum[0]=="no"){
             break;
@@ -721,6 +851,8 @@ foreach($words as $word){
         $tante.=$tline;
     }
 }
+
+$pret=str_replace("{tablewords}",$tablewords,$pret);
 
 /*load fonts not loaded in the tables*/
 foreach($other as $line){
