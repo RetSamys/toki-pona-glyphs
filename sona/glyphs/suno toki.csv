@@ -63,7 +63,7 @@ nanpa,ucsur,&#xF193d;
 nasa,ucsur,&#xF193e;
 nasin,ucsur,&#xF193f;
 nena,ucsur,&#xF1940;
-ni,ucsur,&#xF1941;
+ni,ucsur,&#xF1941;,ni&lt;v,ni&lt;,ni&lt;^,ni^,ni^&gt;,ni&gt;,ni&gt;v
 nimi,ucsur,&#xF1942;
 noka,ucsur,&#xF1943;
 o,ucsur,&#xF1944;
@@ -126,3 +126,9 @@ tonsi,ucsur,&#xF197e;
 cartouche open,ucsur,&#xf1990;
 cartouche end,ucsur,&#xf1991;
 cartouche extension,ucsur,&#xf1992;
+truncated pi<br>for extended pi,ucsur,&#xf1993;
+long pi extension<br>long character extension,ucsur,&#xf1999;
+long glyph start<br>(UCSUR only),ucsur,&#xf1997;
+long glyph end<br>(UCSUR only),ucsur,&#xf1998;
+cartouche interpunct,ucsur,&#xf199c;
+cartouche colon,ucsur,&#xf199d;
