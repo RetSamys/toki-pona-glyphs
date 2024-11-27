@@ -32,7 +32,7 @@ $bodystart='<html><head>
         .sp td,.sp th{display:none;}
         .sp th:nth-child(1){display:table-cell !important;}
 @media print { 
-.noprint{display:none;}
+.noprint{display:none !important;}
 .sp td,.sp th{display:table-cell;}
 .sp tr:nth-child(2),#sona tr:nth-child(1),#features tr:nth-child(1),#features tr:nth-child(2){position:initial;}
 table.sp{min-width:100%;}
@@ -52,6 +52,7 @@ $floadcss="";
 $fdiscss="    body{padding:1em;}
     .sp th,td{text-align:center;margin-left:2em;padding:.3em;}
     #features td,.sp td,textarea{font-size:2.5em;line-height:1.5em}
+    .sp td.def{line-height:1em;font-size:1em;}
 
 
 ";
@@ -86,16 +87,17 @@ body.func tr.func,body.render tr.render,body.save tr.save,body.funcs tr.funcs{di
 </style>
 <meta charset='iso-8859-1' />
 </head><body id=\"body\" class=\"hand uni serif pxl\"><div class=\"noprint\"><p>If this page isn't working, there is a <a href=\"pdf/".$pdf[0][0]."\">PDF version from ".$pdf[0][1]."</a> (<a href=\"".$pdf[0][2]."\">alt link</a>). This page was updated ".date("Y-m-d").".<br><a href=\"tukitiki.html\">tuki tiki fonts</a> &middot; <a href='https://github.com/RetSamys/toki-pona-glyphs'>Github repository</a></p><ul><li><a href=\"#pu\">pu glyphs</a></li><li><a href=\"#kusuli\">ku suli glyphs</a></li><li><a href=\"#kulili\">ku lili glyphs</a></li><li><a href=\"#ante\">other glyphs</a></li><li><a href=\"#namako\">special characters</a></li><li><a href=\"#rad\">radicals</a></li><li><a href=\"#sona\">font information</a><ul><li><a href=\"#features\">Feature showcase</a></li><li><a href=\"#pana\">Input field</a></li></ul></li></ul></div>
-		<table><tbody><tr><th colspan=\"3\" class=\"ucsur\"><a href=\"https://www.kreativekorp.com/ucsur/charts/sitelen.html\" target=\"_blank\">UCSUR</a>-compliant glyphs have a grey background</td></th></tr>
-        <tr class=\"noprint\"><th rowspan=\"7\">styles</th><td><label for=\"check1\">handwritten</label></td><td><input autocomplete=\"off\" id=\"check1\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('hand')){document.body.classList.remove('hand');}else{document.body.classList.add('hand');}return true;\"></td></tr>
-        <tr class=\"noprint\"><td><label for=\"check2\">uniform line weight</label></td><td><input autocomplete=\"off\" id=\"check2\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('uni')){document.body.classList.remove('uni');}else{document.body.classList.add('uni');}return true;\"></td></tr>
-        <tr class=\"noprint\"><td><label for=\"check3\">alternating line weight</label></td><td><input autocomplete=\"off\" id=\"check3\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('serif')){document.body.classList.remove('serif');}else{document.body.classList.add('serif');}return true;\"></td></tr>
-        <tr class=\"noprint\"><td><label for=\"check4\">block based</label></td><td><input autocomplete=\"off\" checked id=\"check4\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('pxl')){document.body.classList.remove('pxl');}else{document.body.classList.add('pxl');}return true;\"></td></tr>
-        <tr class=\"noprint\"><td><label for=\"check5\">alternative design/<br>sitelen pona inspired</label></td><td><input autocomplete=\"off\" id=\"check5\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('alt')){document.body.classList.remove('alt');}else{document.body.classList.add('alt');}return true;\"></td></tr>
-        <tr class=\"noprint\"><td><label for=\"check6\">non-sitelen-pona writing systems</label></td><td><input autocomplete=\"off\" id=\"check6\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('nonsp')){document.body.classList.remove('nonsp');}else{document.body.classList.add('nonsp');}return true;\"></td></tr>
-        <tr class=\"noprint\" style=\"display:none;\"><td><label for=\"check7\">definitions</label></td><td><input autocomplete=\"off\" id=\"check7\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('def')){document.body.classList.remove('def');}else{document.body.classList.add('def');}return true;\"></td></tr>
-        <tr class=\"noprint\"><td><label for=\"check8\">font projects</label></td><td><input autocomplete=\"off\" id=\"check8\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('old')){document.body.classList.remove('old');}else{document.body.classList.add('old');}return true;\"></td></tr>
+		<table><tbody><tr><th colspan=\"3\" class=\"ucsur\"><a href=\"https://www.kreativekorp.com/ucsur/charts/sitelen.html\" target=\"_blank\">UCSUR</a>-compliant glyphs have a grey background</td></th></tr><tr><td colspan=\"3\" style='text-align:left'>{fontcount}</td></tr>
+        <tr class=\"noprint\"><th rowspan=\"7\">styles</th><td><label for=\"check1\">handwritten ({fontcount_hand})</label></td><td><input autocomplete=\"off\" id=\"check1\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('hand')){document.body.classList.remove('hand');}else{document.body.classList.add('hand');}return true;\"></td></tr>
+        <tr class=\"noprint\"><td><label for=\"check2\">uniform line weight ({fontcount_uni})</label></td><td><input autocomplete=\"off\" id=\"check2\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('uni')){document.body.classList.remove('uni');}else{document.body.classList.add('uni');}return true;\"></td></tr>
+        <tr class=\"noprint\"><td><label for=\"check3\">alternating line weight ({fontcount_serif})</label></td><td><input autocomplete=\"off\" id=\"check3\" checked type=\"checkbox\" onclick=\"if(document.body.classList.contains('serif')){document.body.classList.remove('serif');}else{document.body.classList.add('serif');}return true;\"></td></tr>
+        <tr class=\"noprint\"><td><label for=\"check4\">block based ({fontcount_pxl})</label></td><td><input autocomplete=\"off\" checked id=\"check4\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('pxl')){document.body.classList.remove('pxl');}else{document.body.classList.add('pxl');}return true;\"></td></tr>
+        <tr class=\"noprint\"><td><label for=\"check5\">alternative design/<br>sitelen pona inspired ({fontcount_alt})</label></td><td><input autocomplete=\"off\" id=\"check5\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('alt')){document.body.classList.remove('alt');}else{document.body.classList.add('alt');}return true;\"></td></tr>
+        <tr class=\"noprint\"><td><label for=\"check6\">non-sitelen-pona writing systems ({fontcount_nonsp})</label></td><td><input autocomplete=\"off\" id=\"check6\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('nonsp')){document.body.classList.remove('nonsp');}else{document.body.classList.add('nonsp');}return true;\"></td></tr>
+        <tr class=\"noprint\"><td><label for=\"check8\">font projects ({fontcount_old})</label></td><td><input autocomplete=\"off\" id=\"check8\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('old')){document.body.classList.remove('old');}else{document.body.classList.add('old');}return true;\"></td></tr>
         <tr class=\"funcs noprint\"><td colspan='2'><label for=\"check9\" style='text-align:left'>experimental functions</label></td><td><input autocomplete=\"off\" id=\"check9\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('func')){document.body.classList.remove('func');}else{document.body.classList.add('func');}return true;\"></td></tr>
+        <tr class='func noprint'><td colspan='2'>
+            <label for=\"check7\">definitions</label></td><td><input autocomplete=\"off\" id=\"check7\" type=\"checkbox\" onclick=\"if(document.body.classList.contains('def')){document.body.classList.remove('def');}else{document.body.classList.add('def');}return true;\"></td></tr>
         <tr class='func noprint'><td colspan='3'>
             <label for='func1'>isolate font: </label><select autocomplete='off' onchange=\"document.body.classList.remove('func');singlefont(document.getElementById('func1').value);document.body.classList.add('render');\" id='func1'>
                 <option value='' selected disabled>select font</option>
@@ -114,7 +116,7 @@ body.func tr.func,body.render tr.render,body.save tr.save,body.funcs tr.funcs{di
         <tr class='save noprint'><td colspan='3'>
             <button type='button' onclick='document.body.classList.remove(\"save\");downloadz();' id='func4'>save</button>
         </td></tr>
-        </tbody></table>";$tablefonts="";$tablewords="";
+        </tbody></table>";$tablefonts="";$tablewords="";$fontcount=0;$fontcount_hand=0;$fontcount_uni=0;$fontcount_serif=0;$fontcount_pxl=0;$fontcount_alt=0;$fontcount_nonsp=0;$fontcount_old=0;
 
 $tpu='<h2>pu glyphs</h2>
 <table class="sp" id="pu">
@@ -645,6 +647,15 @@ foreach ($finfo as $line){
         $globalfonts[$style]=[];
     }
     array_push($globalfonts[$style],array($font,$fontvar));
+    $fontcount+=1;
+    if ($style=="hand"){$fontcount_hand+=1;}
+    if ($style=="uni"){$fontcount_uni+=1;}
+    if ($style=="serif"){$fontcount_serif+=1;}
+    if ($style=="pxl"){$fontcount_pxl+=1;}
+    if ($style=="alt"){$fontcount_alt+=1;}
+    if ($style=="nonsp"){$fontcount_nonsp+=1;}
+    if (str_contains($style,"old")){$fontcount_old+=1;}
+
     
 /*populate the 2 font info tables*/    
 if(!ctype_space(" ".$author.$license.$range.$prop.$ucsur.$ligatures.$cartouches.$combos.$longpi.$additional.$notes)){
@@ -772,6 +783,7 @@ foreach($styles as $stylum){
     $tline="</tr>
             <tr>
                 <th>font</th>
+                <th class='def noprint'>definition</th>
                 ";
 foreach($styles as $stylum){
     if($stylum[0]=="no"){
@@ -804,15 +816,20 @@ foreach($styles as $stylum){
 
 /*populate word tables*/
 foreach($words as $word){
-    if (array_key_exists($word,$definitions)){
+    /*if (array_key_exists($word,$definitions)){
         $tline='
         <tr title="'.$definitions[$word].'" alt="'.$word.'"';
     }else{
         $tline='
         <tr';
-    }
+    }*/
+    $tline='
+        <tr';
     $tline.='><th>'.$word.'</th>
     ';
+    if (array_key_exists($word,$definitions)){
+        $tline.='<td class="def noprint"><b>'.$word.':</b> '.$definitions[$word].'</td>';
+    }else{$tline.='<td class="def noprint"></td>';}
     $tablewords.="<option value='".$word."'>".$word."</option>";
     foreach($styles as $stylum){
         if($stylum[0]=="no"){
@@ -853,6 +870,14 @@ foreach($words as $word){
 }
 
 $pret=str_replace("{tablewords}",$tablewords,$pret);
+$pret=str_replace("{fontcount}","In these tables: ".$fontcount." fonts.<br> Additional fonts in input field: ".count($other),$pret);
+$pret=str_replace("{fontcount_hand}",$fontcount_hand,$pret);
+$pret=str_replace("{fontcount_uni}",$fontcount_uni,$pret);
+$pret=str_replace("{fontcount_serif}",$fontcount_serif,$pret);
+$pret=str_replace("{fontcount_pxl}",$fontcount_pxl,$pret);
+$pret=str_replace("{fontcount_alt}",$fontcount_alt,$pret);
+$pret=str_replace("{fontcount_nonsp}",$fontcount_nonsp,$pret);
+$pret=str_replace("{fontcount_old}",$fontcount_old,$pret);
 
 /*load fonts not loaded in the tables*/
 foreach($other as $line){
@@ -896,21 +921,24 @@ foreach($styles as $stylum){
             $finput.='
         <option value="'.$font[1].'">'.$font[0].'</option>';
             $fcount+=1;
-            $isfont[$font[0]]["number"]=$fcount;
+            $isfont[$font[0]]["number"]=$fcount+1;
             if($isno){$ffamilcss.=".".$font[1]."{font-family:".$font[1].";}
             ";}
             else{
-                $ffamilcss.="textarea.".$font[1].",.".$font[1]." td,.sp td:nth-child(".$fcount."){font-family:".$font[1].";}
+                $ffamilcss.="textarea.".$font[1].",.".$font[1]." td,.sp td:nth-child(".($fcount+1)."){font-family:".$font[1].";}
             ";
                 if ($fcount>2){$fdiscss.=",";}
                 $fdiscss.="
-.".$stylumm." .sp td:nth-child(".$fcount."),.".$stylumm." .sp th:nth-child(".$fcount.")";
+.".$stylumm." .sp td:nth-child(".($fcount+1)."),.".$stylumm." .sp th:nth-child(".($fcount+1).")";
             }
         }
     }else{
         $isno=true;
     }
 }
+$fdiscss.=",
+.def .sp td:nth-child(2),.def .sp th:nth-child(2)";
+
 $fdiscss.="
 {display:table-cell;}
 
