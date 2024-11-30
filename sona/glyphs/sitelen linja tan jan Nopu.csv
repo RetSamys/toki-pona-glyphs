@@ -14,7 +14,7 @@ ijo,ucsur,&#xF190c;
 ike,ucsur,&#xF190d;
 ilo,ucsur,&#xF190e;
 insa,ucsur,&#xF190f;
-jaki,ucsur,&#xF1910;
+jaki,ucsur,&#xF1910;,jaki2,jaki3
 jan,ucsur,&#xF1911;
 jelo,ucsur,&#xF1912;
 jo,ucsur,&#xF1913;
@@ -25,8 +25,8 @@ kasi,ucsur,&#xF1917;
 ken,ucsur,&#xF1918;
 kepeken,ucsur,&#xF1919;
 kili,ucsur,&#xF191a;
-kiwen,ucsur,&#xF191b;
-ko,ucsur,&#xF191c;
+kiwen,ucsur,&#xF191b;,kiwen2
+ko,ucsur,&#xF191c;,ko2,ko3
 kon,ucsur,&#xF191d;
 kule,ucsur,&#xF191e;
 kulupu,ucsur,&#xF191f;
@@ -50,12 +50,12 @@ ma,ucsur,&#xF1930;
 mama,ucsur,&#xF1931;
 mani,ucsur,&#xF1932;
 meli,ucsur,&#xF1933;
-mi,ucsur,&#xF1934;
+mi,ucsur,&#xF1934;,mi2
 mije,ucsur,&#xF1935;
 moku,ucsur,&#xF1936;
 moli,ucsur,&#xF1937;
 monsi,ucsur,&#xF1938;
-mu,ucsur,&#xF1939;
+mu,ucsur,&#xF1939;,mu2
 mun,ucsur,&#xF193a;
 musi,ucsur,&#xF193b;
 mute,ucsur,&#xF193c;
@@ -67,8 +67,8 @@ ni,ucsur,&#xF1941;
 nimi,ucsur,&#xF1942;
 noka,ucsur,&#xF1943;
 o,ucsur,&#xF1944;
-olin,ucsur,&#xF1945;
-ona,ucsur,&#xF1946;
+olin,ucsur,&#xF1945;,olin2
+ona,ucsur,&#xF1946;,ona2
 open,ucsur,&#xF1947;
 pakala,ucsur,&#xF1948;
 pali,ucsur,&#xF1949;
@@ -88,11 +88,11 @@ sama,ucsur,&#xF1956;
 seli,ucsur,&#xF1957;
 selo,ucsur,&#xF1958;
 seme,ucsur,&#xF1959;
-sewi,ucsur,&#xF195a;
+sewi,ucsur,&#xF195a;,sewi2
 sijelo,ucsur,&#xF195b;
 sike,ucsur,&#xF195c;
 sin,ucsur,&#xF195d;
-sina,ucsur,&#xF195e;
+sina,ucsur,&#xF195e;,sina2
 sinpin,ucsur,&#xF195f;
 sitelen,ucsur,&#xF1960;
 sona,ucsur,&#xF1961;
@@ -110,7 +110,7 @@ toki,ucsur,&#xF196c;
 tomo,ucsur,&#xF196d;
 tu,ucsur,&#xF196e;
 unpa,ucsur,&#xF196f;
-uta,ucsur,&#xF1970;
+uta,ucsur,&#xF1970;,uta2
 utala,ucsur,&#xF1971;
 walo,ucsur,&#xF1972;
 wan,ucsur,&#xF1973;
@@ -145,3 +145,8 @@ su,,su
 te,,te
 to,,to
 kokosila,ucsur,&#xF1984;
+isipin,,isipin
+ka,,ka
+soto,,soto
+teje,,teje
+apeja,,apeja
