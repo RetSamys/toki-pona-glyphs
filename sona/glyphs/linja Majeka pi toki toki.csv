@@ -26,7 +26,7 @@ ken,ucsur,&#xF1918;
 kepeken,ucsur,&#xF1919;
 kili,ucsur,&#xF191a;,&#xF191a;2
 kiwen,ucsur,&#xF191b;
-ko,ucsur,&#xF191c;
+ko,ucsur,&#xF191c;,&#xF191c;2
 kon,ucsur,&#xF191d;
 kule,ucsur,&#xF191e;
 kulupu,ucsur,&#xF191f;
@@ -109,7 +109,7 @@ tenpo,ucsur,&#xF196b;
 toki,ucsur,&#xF196c;
 tomo,ucsur,&#xF196d;,&#xF196d;2
 tu,ucsur,&#xF196e;
-unpa,ucsur,&#xF196f;,&#xF196f;2
+unpa,ucsur,&#xF196f;
 uta,ucsur,&#xF1970;
 utala,ucsur,&#xF1971;
 walo,ucsur,&#xF1972;
@@ -130,7 +130,7 @@ meso,ucsur,&#xF1982;
 misikeke,ucsur,&#xF1987;
 monsuta,ucsur,&#xF197d;
 n,ucsur,&#xF1986;
-namako,ucsur,&#xF1978;
+namako,ucsur,&#xF1978;,&#xF1978;2
 oko,ucsur,&#xF197a;
 soko,ucsur,&#xF1981;,&#xF1981;2
 tonsi,ucsur,&#xF197e;
@@ -181,3 +181,6 @@ vertical line radical,ucsur,&#xF1C99;
 horizontal line radical,ucsur,&#xF1C9A;
 exclamation line radical,ucsur,&#xF1C9B;
 comma radical,ucsur,&#xF1C9C;
+jonke,,jonke
+usawi,,usawi
+ete,,ete,ete2,ete3
