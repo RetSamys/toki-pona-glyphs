@@ -87,8 +87,8 @@ pu,ucsur,&#xF1955;
 sama,ucsur,&#xF1956;
 seli,ucsur,&#xF1957;
 selo,ucsur,&#xF1958;
-seme,ucsur,&#xF1959;
-sewi,ucsur,&#xF195a;
+seme,ucsur,&#xF1959;,&#xF1959;2
+sewi,ucsur,&#xF195a;,&#xF195a;2
 sijelo,ucsur,&#xF195b;,&#xF195b;2
 sike,ucsur,&#xF195c;
 sin,ucsur,&#xF195d;
@@ -118,7 +118,7 @@ waso,ucsur,&#xF1974;
 wawa,ucsur,&#xF1975;
 weka,ucsur,&#xF1976;
 wile,ucsur,&#xF1977;
-epiku,ucsur,&#xF1983;
+epiku,ucsur,&#xF1983;,&#xF1983;2
 jasima,ucsur,&#xF197f;
 kijetesantakalu,ucsur,&#xF1980;,&#xF1980;2
 kin,ucsur,&#xF1979;
@@ -127,7 +127,7 @@ ku,ucsur,&#xF1988;
 lanpan,ucsur,&#xF1985;
 leko,ucsur,&#xF197c;
 meso,ucsur,&#xF1982;
-misikeke,ucsur,&#xF1987;
+misikeke,ucsur,&#xF1987;,&#xF1987;2
 monsuta,ucsur,&#xF197d;
 n,ucsur,&#xF1986;
 namako,ucsur,&#xF1978;,&#xF1978;2
@@ -184,3 +184,10 @@ comma radical,ucsur,&#xF1C9C;
 jonke,,jonke
 usawi,,usawi
 ete,,ete,ete2,ete3
+majuna,,majuna
+soto,,soto
+teje,,teje
+ka,,ka
+apeja,,apeja
+powe,,powe
+snoweli,,snoweli
