@@ -55,7 +55,7 @@ mije,ucsur,&#xF1935;
 moku,ucsur,&#xF1936;
 moli,ucsur,&#xF1937;
 monsi,ucsur,&#xF1938;
-mu,ucsur,&#xF1939;
+mu,ucsur,&#xF1939;,&#xF1939;2
 mun,ucsur,&#xF193a;
 musi,ucsur,&#xF193b;
 mute,ucsur,&#xF193c;,&#xF193c;2
@@ -135,7 +135,7 @@ oko,ucsur,&#xF197a;
 soko,ucsur,&#xF1981;,&#xF1981;2
 tonsi,ucsur,&#xF197e;
 isipin,,isipin
-kijesankalu,,kijesankalu
+kijesankalu,,kijesankalu,kisantaku,kiseku
 kulijo,,kulijo
 owe,,owe
 pokasi,,pokasi
@@ -194,3 +194,4 @@ snoweli,,snoweli
 te,,te
 to,,to
 penpo,,penpo
+me,,me
