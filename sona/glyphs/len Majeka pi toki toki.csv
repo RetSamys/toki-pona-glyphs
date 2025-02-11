@@ -24,7 +24,7 @@ kama,ucsur,&#xF1916;
 kasi,ucsur,&#xF1917;
 ken,ucsur,&#xF1918;
 kepeken,ucsur,&#xF1919;
-kili,ucsur,&#xF191a;,&#xF191a;2
+kili,ucsur,&#xF191a;,&#xF191a;2,kili3
 kiwen,ucsur,&#xF191b;
 ko,ucsur,&#xF191c;,&#xF191c;2
 kon,ucsur,&#xF191d;
@@ -63,7 +63,7 @@ nanpa,ucsur,&#xF193d;
 nasa,ucsur,&#xF193e;
 nasin,ucsur,&#xF193f;
 nena,ucsur,&#xF1940;
-ni,ucsur,&#xF1941;
+ni,ucsur,&#xF1941;ni2,ni3,ni4
 nimi,ucsur,&#xF1942;
 noka,ucsur,&#xF1943;
 o,ucsur,&#xF1944;
@@ -195,3 +195,6 @@ te,,te
 to,,to
 penpo,,penpo
 me,,me
+kokosila,ucsur,kokosila
+cartouche interpunct,ucsur,&#xf199c;
+cartouche colon,ucsur,&#xf199d;
