@@ -57,7 +57,7 @@ moli,ucsur,&#xF1937;,moli2
 monsi,ucsur,&#xF1938;
 mu,ucsur,mu,mu2
 mun,ucsur,&#xF193a;
-musi,ucsur,&#xF193b;
+musi,ucsur,&#xF193b;,musi2
 mute,ucsur,&#xF193c;,mute2
 nanpa,ucsur,&#xF193d;
 nasa,ucsur,&#xF193e;
@@ -96,7 +96,7 @@ sina,ucsur,sina,sina2
 sinpin,ucsur,&#xF195f;
 sitelen,ucsur,&#xF1960;
 sona,ucsur,&#xF1961;
-soweli,ucsur,&#xF1962;
+soweli,ucsur,&#xF1962;,soweli2
 suli,ucsur,&#xF1963;
 suno,ucsur,&#xF1964;
 supa,ucsur,&#xF1965;
@@ -122,9 +122,9 @@ epiku,ucsur,&#xF1983;,&#xFfaab;,&#xFfaac;
 jasima,ucsur,&#xF197f;
 kijetesantakalu,ucsur,&#xF1980;,kijetesantakalu2
 kin,ucsur,kin,kin2
-kipisi,ucsur,&#xF197b;
+kipisi,ucsur,&#xF197b;,kipisi2
 kokosila,ucsur,&#xF1984;,&#xFfaad;,&#xFfaae;
-ku,ucsur,&#xF1988;,ku2,ku3,ku4,ku5,ku6
+ku,ucsur,&#xF1988;,ku2,ku3,ku4,ku5,ku6,ku7
 lanpan,ucsur,&#xF1985;,&#xFfaaf;,&#xFfab0;,&#xFfab1;
 leko,ucsur,&#xF197c;
 meso,ucsur,&#xF1982;,&#xFfaa9;,&#xFfaaa;
@@ -168,15 +168,15 @@ polinpin,,polinpin
 pomotolo,,pomotolo
 powe,ucsur,&#xF19a3;
 samu,,samu
-san,,san
+san,,san,san2,san3
 soto,,soto
-su,,su
+su,,su,su2
 sutopatikuna,,sutopatikuna
 taki,,taki,taki2
 te,,te
 teje,,teje
 to,,to
-tuli,,tuli
+tuli,,tuli,tuli2,tuli3
 u,,u
 umesu,,umesu,umesu2
 unu,,unu
@@ -299,7 +299,7 @@ slape,,slape
 snoweli,,snoweli
 soni<br>(si),,soni
 sowoli,,sowoli
-su2,,su2
+su2,,su0
 ta,,ta
 tasun,,tasun,taaaaaasun
 teken,,teken
@@ -365,3 +365,18 @@ vertical line radical,ucsur,&#xF1C99;
 horizontal line radical,ucsur,&#xF1C9A;
 exclamation line radical,ucsur,&#xF1C9B;
 comma radical,ucsur,&#xF1C9C;
+inta,,inta
+kani,,kani
+kelo,,kelo
+kewe,,kewe
+kijesankalu,,kijesankalu
+kinute,,kinute
+kitu,,kitu
+lan,,lan,lan2
+nusun,,nusun
+onono,,onono
+panpan,,panpan
+salantapotalusa,,salantapotalusa
+sokeli,,sokeli
+sunta,,sunta
+tawake,,tawake
