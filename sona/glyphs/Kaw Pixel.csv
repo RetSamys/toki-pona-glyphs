@@ -144,5 +144,5 @@ cartouche end,ucsur,&#xf1991;
 cartouche extension,ucsur,&#xf1992;
 cartouche interpunct,ucsur,&#xf199c;
 cartouche colon,ucsur,&#xf199d;
-long pi extension<br>long character extension,&#xf198a;
-truncated pi<br>for extended pi,&#xf1989;
+long pi extension<br>long character extension,ucsur,&#xf198a;
+truncated pi<br>for extended pi,ucsur,&#xf1989;
