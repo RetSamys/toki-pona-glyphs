@@ -14,11 +14,11 @@ ijo,ucsur,&#xF190c;
 ike,ucsur,&#xF190d;
 ilo,ucsur,&#xF190e;
 insa,ucsur,&#xF190f;
-jaki,ucsur,&#xF1910;
+jaki,ucsur,&#xF1910;,jaki2,jaki3
 jan,ucsur,&#xF1911;
 jelo,ucsur,&#xF1912;
 jo,ucsur,&#xF1913;
-kala,ucsur,&#xF1914;,kala&lt;^,kala&lt;,kala&lt;v,kalav,kala&gt;v,kala&gt;,kala&gt;^
+kala,ucsur,&#xF1914;,kala&lt;^,kala&lt;,kala&lt;v,kalav,kala&gt;v,kala&gt;,kala&gt;^,kala2
 kalama,ucsur,&#xF1915;
 kama,ucsur,&#xF1916;
 kasi,ucsur,&#xF1917;
@@ -26,7 +26,7 @@ ken,ucsur,&#xF1918;
 kepeken,ucsur,&#xF1919;
 kili,ucsur,&#xF191a;
 kiwen,ucsur,&#xF191b;
-ko,ucsur,&#xF191c;
+ko,ucsur,&#xF191c;,ko2,ko3
 kon,ucsur,&#xF191d;
 kule,ucsur,&#xF191e;
 kulupu,ucsur,&#xF191f;
@@ -67,7 +67,7 @@ ni,ucsur,&#xF1941;,ni&gt;v,ni&gt;,ni&gt;^,ni^,ni&lt;^,ni&lt;,ni&lt;v
 nimi,ucsur,&#xF1942;
 noka,ucsur,&#xF1943;
 o,ucsur,&#xF1944;
-olin,ucsur,&#xF1945;
+olin,ucsur,&#xF1945;,olin2
 ona,ucsur,&#xF1946;
 open,ucsur,&#xF1947;
 pakala,ucsur,&#xF1948;
@@ -88,7 +88,7 @@ sama,ucsur,&#xF1956;
 seli,ucsur,&#xF1957;
 selo,ucsur,&#xF1958;
 seme,ucsur,&#xF1959;
-sewi,ucsur,&#xF195a;
+sewi,ucsur,&#xF195a;,sewi2
 sijelo,ucsur,&#xF195b;
 sike,ucsur,&#xF195c;
 sin,ucsur,&#xF195d;
@@ -110,37 +110,44 @@ toki,ucsur,&#xF196c;
 tomo,ucsur,&#xF196d;
 tu,ucsur,&#xF196e;
 unpa,ucsur,&#xF196f;
-uta,ucsur,&#xF1970;
+uta,ucsur,&#xF1970;,uta2
 utala,ucsur,&#xF1971;
 walo,ucsur,&#xF1972;
 wan,ucsur,&#xF1973;
 waso,ucsur,&#xF1974;,waso&lt;^,waso&lt;,waso&lt;v,wasov,waso&gt;v,waso&gt;,waso&gt;^
 wawa,ucsur,&#xF1975;
 weka,ucsur,&#xF1976;
-wile,ucsur,&#xF1977;
+wile,ucsur,&#xF1977;,wile2
 epiku,ucsur,&#xF1983;
 jasima,ucsur,&#xF197f;
 kijetesantakalu,ucsur,&#xF1980;,kijetesantakalu&lt;^,kijetesantakalu&lt;,kijetesantakalu&lt;v,kijetesantakaluv,kijetesantakalu&gt;v,kijetesantakalu&gt;,kijetesantakalu&gt;^
 kin,ucsur,&#xF1979;
 kipisi,ucsur,&#xF197b;
 ku,ucsur,&#xF1988;
-lanpan,ucsur,&#xF1985;
+lanpan,ucsur,&#xF1985;,lanpan2
 leko,ucsur,&#xF197c;
 meso,ucsur,&#xF1982;
 misikeke,ucsur,&#xF1987;
 monsuta,ucsur,&#xF197d;
 n,ucsur,&#xF1986;
-namako,ucsur,&#xF1978;
+namako,ucsur,&#xF1978;,namako2
 oko,ucsur,&#xF197a;
-soko,ucsur,&#xF1981;
+soko,ucsur,&#xF1981;,soko2,soko3
 tonsi,ucsur,&#xF197e;
-majuna,ucsur,&#xF19a2;
+majuna,ucsur,&#xF19a2;,majuna2
 cartouche open,ucsur,&#xf1990;
 cartouche end,ucsur,&#xf1991;
 cartouche extension,ucsur,&#xf1992;
 cartouche interpunct,ucsur,&#xf199c;
 cartouche colon,ucsur,&#xf199d;
-linluwi,,linluwi
+linluwi,,linluwi,linluwi2
 su,,su
 te,,te
 to,,to
+kokosila,ucsur,kokosila
+usawi,,usawi
+nimisin,,nimisin
+kiki,,kiki
+apeja,ucsur,apeja
+powe,ucsur,powe
+;,,;
