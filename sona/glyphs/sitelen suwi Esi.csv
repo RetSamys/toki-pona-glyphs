@@ -7,7 +7,7 @@ anpa,ucsur,&#xF1905;
 ante,ucsur,&#xF1906;
 anu,ucsur,&#xF1907;
 awen,ucsur,&#xF1908;
-e,ucsur,&#xF1909;
+e,ucsur,&#xF1909;,e2,e{,e}
 en,ucsur,&#xF190a;
 esun,ucsur,&#xF190b;
 ijo,ucsur,&#xF190c;
@@ -37,7 +37,7 @@ laso,ucsur,&#xF1923;
 lawa,ucsur,&#xF1924;
 len,ucsur,&#xF1925;
 lete,ucsur,&#xF1926;
-li,ucsur,&#xF1927;
+li,ucsur,&#xF1927;,li{,li}
 lili,ucsur,&#xF1928;
 linja,ucsur,&#xF1929;
 lipu,ucsur,&#xF192a;
@@ -66,7 +66,7 @@ nena,ucsur,&#xF1940;
 ni,ucsur,&#xF1941;,ni&gt;v,ni&gt;,ni&gt;^,ni^,ni&lt;^,ni&lt;,ni&lt;v
 nimi,ucsur,&#xF1942;
 noka,ucsur,&#xF1943;
-o,ucsur,&#xF1944;
+o,ucsur,&#xF1944;,o2,o{,o}
 olin,ucsur,&#xF1945;
 ona,ucsur,&#xF1946;
 open,ucsur,&#xF1947;
@@ -75,7 +75,7 @@ pali,ucsur,&#xF1949;
 palisa,ucsur,&#xF194a;
 pan,ucsur,&#xF194b;
 pana,ucsur,&#xF194c;
-pi,ucsur,&#xF194d;
+pi,ucsur,&#xF194d;pi{,pi}
 pilin,ucsur,&#xF194e;
 pimeja,ucsur,&#xF194f;
 pini,ucsur,&#xF1950;
@@ -144,3 +144,11 @@ linluwi,,linluwi
 su,,su
 te,,te
 to,,to
+me,,me
+cartouche end,,{
+cartouche open,,}
+usawi,,usawi
+iseki,,iseki
+unu,,unu
+kiki,,kiki
+apeja,ucsur,apeja
