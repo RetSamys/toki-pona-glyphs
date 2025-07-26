@@ -14,7 +14,7 @@ ijo,ucsur,&#xF190c;
 ike,ucsur,&#xF190d;
 ilo,ucsur,&#xF190e;
 insa,ucsur,&#xF190f;
-jaki,ucsur,&#xF1910;
+jaki,ucsur,&#xF1910;,jaki2
 jan,ucsur,&#xF1911;
 jelo,ucsur,&#xF1912;
 jo,ucsur,&#xF1913;
@@ -98,7 +98,7 @@ sitelen,ucsur,&#xF1960;
 sona,ucsur,&#xF1961;
 soweli,ucsur,&#xF1962;,soweli&lt;^,soweli&lt;,soweli&lt;v,soweliv,soweli&gt;v,soweli&gt;,soweli&gt;^
 suli,ucsur,&#xF1963;
-suno,ucsur,&#xF1964;
+suno,ucsur,&#xF1964;,suno2
 supa,ucsur,&#xF1965;
 suwi,ucsur,&#xF1966;
 tan,ucsur,&#xF1967;
@@ -130,11 +130,11 @@ meso,ucsur,&#xF1982;
 misikeke,ucsur,&#xF1987;
 monsuta,ucsur,&#xF197d;
 n,ucsur,&#xF1986;
-namako,ucsur,&#xF1978;
+namako,ucsur,&#xF1978;,namako2
 oko,ucsur,&#xF197a;
 soko,ucsur,&#xF1981;
 tonsi,ucsur,&#xF197e;
-majuna,ucsur,&#xF19a2;
+majuna,ucsur,&#xF19a2;,majuna2
 cartouche open,ucsur,&#xf1990;
 cartouche end,ucsur,&#xf1991;
 cartouche extension,ucsur,&#xf1992;
@@ -144,3 +144,15 @@ linluwi,,linluwi
 su,,su
 te,,te
 to,,to
+usawi,,usawi
+;,,;
+kokosila,ucsur,kokosila
+unu,,unu
+yutu,,yutu
+ete,,ete
+soto,,soto
+teje,,teje
+me,,me
+kalamawala,,kalamawala,kalamawal,kalamawa,kalamaw,kalam,kal,ka
+kijosin,,kijosin
+iseki,,iseki
