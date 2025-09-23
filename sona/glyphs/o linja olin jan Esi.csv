@@ -23,7 +23,7 @@ kalama,ucsur,&#xF1915;
 kama,ucsur,&#xF1916;
 kasi,ucsur,&#xF1917;
 ken,ucsur,&#xF1918;
-kepeken,ucsur,&#xF1919;
+kepeken,ucsur,&#xF1919;,kepeken2
 kili,ucsur,&#xF191a;
 kiwen,ucsur,&#xF191b;
 ko,ucsur,&#xF191c;
@@ -42,7 +42,7 @@ lili,ucsur,&#xF1928;
 linja,ucsur,&#xF1929;
 lipu,ucsur,&#xF192a;
 loje,ucsur,&#xF192b;
-lon,ucsur,&#xF192c;
+lon,ucsur,&#xF192c;,lon2
 luka,ucsur,&#xF192d;
 lukin,ucsur,&#xF192e;
 lupa,ucsur,&#xF192f;
@@ -84,11 +84,11 @@ poka,ucsur,&#xF1952;
 poki,ucsur,&#xF1953;
 pona,ucsur,&#xF1954;
 pu,ucsur,&#xF1955;
-sama,ucsur,&#xF1956;
+sama,ucsur,&#xF1956;,sama2
 seli,ucsur,&#xF1957;
 selo,ucsur,&#xF1958;
 seme,ucsur,&#xF1959;
-sewi,ucsur,&#xF195a;
+sewi,ucsur,&#xF195a;,sewi2
 sijelo,ucsur,&#xF195b;
 sike,ucsur,&#xF195c;
 sin,ucsur,&#xF195d;
@@ -101,9 +101,9 @@ suli,ucsur,&#xF1963;
 suno,ucsur,&#xF1964;
 supa,ucsur,&#xF1965;
 suwi,ucsur,&#xF1966;
-tan,ucsur,&#xF1967;
+tan,ucsur,&#xF1967;,tan2
 taso,ucsur,&#xF1968;
-tawa,ucsur,&#xF1969;
+tawa,ucsur,&#xF1969;,tawa2
 telo,ucsur,&#xF196a;
 tenpo,ucsur,&#xF196b;
 toki,ucsur,&#xF196c;
@@ -133,7 +133,7 @@ n,ucsur,&#xF1986;
 namako,ucsur,&#xF1978;
 oko,ucsur,&#xF197a;
 soko,ucsur,&#xF1981;
-tonsi,ucsur,&#xF197e;
+tonsi,ucsur,&#xF197e;,tonsi2
 majuna,ucsur,&#xF19a2;
 cartouche open,ucsur,&#xf1990;
 cartouche end,ucsur,&#xf1991;
@@ -153,4 +153,7 @@ san,,san
 po,,po
 pake,ucsur,pake
 powe,ucsur,powe
-lon2 sama2 tawa2 tan2 kepeken2 ki ki2 sewi2 iseki ojuta omekapo tonsi2
+ki,,ki,ki2
+iseki,,iseki
+ojuta,,ojuta
+omekapo,,omekapo
