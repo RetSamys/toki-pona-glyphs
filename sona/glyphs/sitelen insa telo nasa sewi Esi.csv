@@ -15,7 +15,7 @@ ike,ucsur,&#xF190d;
 ilo,ucsur,&#xF190e;
 insa,ucsur,&#xF190f;
 jaki,ucsur,&#xF1910;
-jan,ucsur,&#xF1911;
+jan,ucsur,&#xF1911;,jan2
 jelo,ucsur,&#xF1912;
 jo,ucsur,&#xF1913;
 kala,ucsur,&#xF1914;,kala&lt;^,kala&lt;,kala&lt;v,kalav,kala&gt;v,kala&gt;,kala&gt;^
@@ -49,12 +49,12 @@ lupa,ucsur,&#xF192f;
 ma,ucsur,&#xF1930;
 mama,ucsur,&#xF1931;
 mani,ucsur,&#xF1932;
-meli,ucsur,&#xF1933;
+meli,ucsur,&#xF1933;,meli2
 mi,ucsur,&#xF1934;
-mije,ucsur,&#xF1935;
+mije,ucsur,&#xF1935;,mije2
 moku,ucsur,&#xF1936;
 moli,ucsur,&#xF1937;
-monsi,ucsur,&#xF1938;
+monsi,ucsur,&#xF1938;,monsi2
 mu,ucsur,&#xF1939;
 mun,ucsur,&#xF193a;
 musi,ucsur,&#xF193b;
@@ -85,7 +85,7 @@ poki,ucsur,&#xF1953;
 pona,ucsur,&#xF1954;
 pu,ucsur,&#xF1955;
 sama,ucsur,&#xF1956;
-seli,ucsur,&#xF1957;
+seli,ucsur,&#xF1957;,seli2
 selo,ucsur,&#xF1958;
 seme,ucsur,&#xF1959;
 sewi,ucsur,&#xF195a;
@@ -98,9 +98,9 @@ sitelen,ucsur,&#xF1960;
 sona,ucsur,&#xF1961;
 soweli,ucsur,&#xF1962;,soweli&lt;^,soweli&lt;,soweli&lt;v,soweliv,soweli&gt;v,soweli&gt;,soweli&gt;^
 suli,ucsur,&#xF1963;
-suno,ucsur,&#xF1964;
+suno,ucsur,&#xF1964;,suno2
 supa,ucsur,&#xF1965;
-suwi,ucsur,&#xF1966;
+suwi,ucsur,&#xF1966;,suwi2
 tan,ucsur,&#xF1967;
 taso,ucsur,&#xF1968;
 tawa,ucsur,&#xF1969;
@@ -109,10 +109,10 @@ tenpo,ucsur,&#xF196b;
 toki,ucsur,&#xF196c;
 tomo,ucsur,&#xF196d;
 tu,ucsur,&#xF196e;
-unpa,ucsur,&#xF196f;
+unpa,ucsur,&#xF196f;,unpa2
 uta,ucsur,&#xF1970;
 utala,ucsur,&#xF1971;
-walo,ucsur,&#xF1972;
+walo,ucsur,&#xF1972;,walo2
 wan,ucsur,&#xF1973;
 waso,ucsur,&#xF1974;,waso&lt;^,waso&lt;,waso&lt;v,wasov,waso&gt;v,waso&gt;,waso&gt;^
 wawa,ucsur,&#xF1975;
@@ -133,7 +133,7 @@ n,ucsur,&#xF1986;
 namako,ucsur,&#xF1978;
 oko,ucsur,&#xF197a;
 soko,ucsur,&#xF1981;
-tonsi,ucsur,&#xF197e;
+tonsi,ucsur,&#xF197e;,tonsi2
 majuna,ucsur,&#xF19a2;
 cartouche open,ucsur,&#xf1990;
 cartouche end,ucsur,&#xf1991;
@@ -152,3 +152,4 @@ san,,san
 tutu,,tutu
 po,,po
 me,,me
+unu,,unu,unu2
