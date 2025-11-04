@@ -8,7 +8,8 @@ ini_set("output_buffering", "off");
 // Turn off PHP output compression
 ini_set("zlib.output_compression", false);
 
-$thehtml = "index";
+$thehtml = "all";
+$anhtml="index";
 
 echo '<ul><li><a href="?ijo=4&seme=hand">hand</a></li><li><a href="?ijo=4&seme=uni">uni</a></li><li><a href="?ijo=4&seme=serif">serif</a></li><li><a href="?ijo=4&seme=pxl">pxl</a></li><li><a href="?ijo=4&seme=alt">alt</a></li><li><a href="?ijo=4&seme=nonsp">nonsp</a></li><li><a href="?ijo=4YanuY4&seme=uniYanuYserif&lipu=book.html">book (uni/serif)</a></li><li><a href="?ijo=6&seme=cc0">cc0</a></li><li><a href="?ijo=6&seme=mit">mit</a></li><li><a href="?ijo=6&seme=OFL">OFL</a></li><li><a href="?ijo=6&seme=cc">cc</a></li><li><a href="?ijo=6&seme=fontstruct">fontstruct</a></li><li><a href="?ijo=8&seme=proportional">proportional</a></li><li><a href="?ijo=8&seme=monospaced">monospaced</a></li><li><a href="?ijo=9&seme=yes&lipu=ucsur">ucsur</a></li><li><a href="?ijo=10&seme=yes&lipu=ligatures">ligatures</a></li><li><a href="?ijo=11&seme=yes&lipu=cartouches">cartouches</a></li><li><a href="?ijo=12&seme=yes&lipu=combined glyphs">combined glyphs</a></li><li><a href="?ijo=13&seme=yes&lipu=long pi">long pi</a></li></ul>';
 
@@ -139,6 +140,72 @@ $glyphs = "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/glyphs/";
 
 /*prepare the different parts of the page*/
 
+$home=
+    '<html><head><style>
+    html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+}
+    	body #indivf{
+visibility:hidden;
+        }
+        body.indivf #indivf{
+visibility:visible;
+        }
+        h2{
+        	text-align:center;
+        }
+    </style></head><body><div>
+    <h2>What do you want to see?</h2>
+    <a href="all.html">Everything.</a><br>
+   <details>
+    <summary><b>Font styles</b></summary>
+    <a href="hand.html">handwritten fonts</a><br>
+    <a href="uni.html">fonts with a consistent line width</a><br>
+    <a href="serif.html">fonts with modulated line width</a><br>
+    <a href="pxl.html">block-based fonts</a><br>
+    <a href="alt.html">alternative design/sitelen pona inspired</a><br>
+    <a href="nonsp.html">non-sitelen-pona writing systems</a><br>
+    <a href="book.html">fonts with consistent OR modulated line width</a>
+    </details><details>
+<summary><b>Licenses</b></summary>
+    <a href="cc.html">any Creative Commons license</a><br>
+    <a href="cc0.html">CC0</a><br>
+    <a href="mit.html">MIT</a><br>
+    <a href="ofl.html">OFL</a><br>
+    <a href="fontstruct.html">any Fontstruct license</a>
+    </details><details>
+<summary><b>Proportions</b></summary>
+    <a href="proportional.html">character width adapts to character</a><br>
+    <a href="monospaced.html">all characters have the same width</a><br>
+    </details><details>
+<summary><b>Features</b></summary>
+<a href="ucsur.html">UCSUR-compliant</a><br>
+    <a href="ligatures.html">ligatures transform typed out words into characters</a><br>
+    <a href="cartouches.html">cartouches are closed boxes around names</a><br>
+    <a href="combined glyphs.html">combined glyphs</a><br>
+    <a href="long pi.html">the underline of &quot;pi&quot; extends underneath other characters</a>
+    </details>
+    <a href="pdf">The archive</a><br>
+    <a href="input.html">Input field with all fonts</a><br>
+    <a href="info.html">Font information</a><br>
+    <a href="#" onclick="document.body.classList.add(\'indivf\');">Individual fonts</a>
+    <br>
+    <select id="indivf" onchange="var tk=document.getElementById(\'indivf\').value;window.location.href=tk+\'.html\';" autocomplete="off">
+    <option value="" selected disabled>select font</option>
+    {tablefonts}
+    </select></div></body></html>
+    ';
+
 $bodystart =
     '<html><head>
 <script src="jszip.min.js"></script>
@@ -176,7 +243,7 @@ table.sp{min-width:100%;}
 }
 
 ';
-if ($ijo == 0) {
+if ($ijo === "0") {
     $bodystart .= '
     .sp tr{display:inline-table}
     .sp th{display:none !important}
@@ -740,6 +807,7 @@ function redrawTextarea(e) {
 </script>
 
 </body></html>';
+
 /*formatting some data*/
 $nimipu = [];
 $nimikusuli = [];
@@ -812,7 +880,7 @@ echo str_pad("", 1024, " ");
 
 /*ob_flush();*/
 flush();
-/*get main font info*/ echo "<p>Getting glyphs from fonts</p>";
+/*get main font info*/ echo "<p>Getting glyphs from fonts</p><ol reversed>";
 foreach ($finfo as $line) {
     if ($line == [] || ctype_space($line[0] . " ")) {
         continue;
@@ -876,7 +944,7 @@ foreach ($finfo as $line) {
 
     if ($ijo !== false && $seme !== false) {
         $semecontinue = true;
-        if ($ijo == 0) {
+        if ($ijo === "0") {echo $ijo;
             if ($line[$ijo] == $seme) {
                 $semecontinue = false;
             }
@@ -929,7 +997,7 @@ foreach ($finfo as $line) {
             $semecontinue = false;
         }
         if ($semecontinue) {
-            echo "<li>" . $line[0] . " IGNORED</li>";
+            echo "<li style='opacity:.5;'><a href='?ijo=0&seme=" . $line[0] . "'>". $line[0] ."</a>.csv IGNORED</li>";
             continue;
         }
     }
@@ -1089,7 +1157,7 @@ foreach ($finfo as $line) {
                 FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
             )
         );
-        echo "<li>" . $font . ".csv  " . (time() - $tmer) . "s</li>";
+        echo "<li>".(file_exists(__DIR__."/../".$font.".html")?"":"<b>")."<a href='?ijo=0&seme=" . $font . "'>". $font ."</a>".(file_exists(__DIR__."/../".$font.".html")?"":"</b>").".csv  " . (time() - $tmer) . "s</li>";
         echo str_pad("", 1024, " ");
         /*echo "<br />";*/
 
@@ -1307,7 +1375,7 @@ foreach ($finfo as $line) {
         ";
     }
 }
-echo "</p><p>Done.</p>";
+echo "</ol><p>Done.</p>";
 
 uksort($globalwords, "strnatcasecmp");
 $words = array_keys($globalwords);
@@ -1323,7 +1391,7 @@ foreach ($words as $word) {
         /*if (!array_key_exists($style[0],$globalwords)){$globalwords[$word][$style[0]]=[];}*/
         if (isset($globalfonts[$style[0] . " old"])) {
             $globalfontss = array_merge(
-                $globalfonts[$style[0]],
+                $globalfonts[$style[0]] ?? [],
                 $globalfonts[$style[0] . " old"]
             );
             sort($globalfontss);
@@ -1360,7 +1428,7 @@ foreach ($styles as $stylum) {
     $trad .= $tline;
     if (isset($globalfonts[$stylum[0] . " old"])) {
         $stfonts = array_merge(
-            $globalfonts[$stylum[0]],
+            $globalfonts[$stylum[0]] ?? [],
             $globalfonts[$stylum[0] . " old"]
         );
         sort($stfonts);
@@ -1466,7 +1534,7 @@ foreach ($styles as $stylum) {
 
     if (isset($globalfonts[$stylum[0] . " old"])) {
         $stfonts = array_merge(
-            $globalfonts[$stylum[0]],
+            $globalfonts[$stylum[0]] ?? [],
             $globalfonts[$stylum[0] . " old"]
         );
         sort($stfonts);
@@ -1485,6 +1553,7 @@ foreach ($styles as $stylum) {
     }
 }
 $pret = str_replace("{tablefonts}", $tablefonts, $pret);
+if($ijo === false && $seme === false){$home = str_replace("{tablefonts}", $tablefonts, $home);}
 $tpu .= $tline;
 $tkusuli .= $tline;
 $tkulili .= $tline;
@@ -1528,7 +1597,7 @@ foreach ($words as $word) {
 
         if (isset($globalfonts[$stylum[0] . " old"])) {
             $stfonts = array_merge(
-                $globalfonts[$stylum[0]],
+                $globalfonts[$stylum[0]] ?? [],
                 $globalfonts[$stylum[0] . " old"]
             );
             sort($stfonts);
@@ -1578,7 +1647,7 @@ $pret = str_replace("{tablewords}", $tablewords, $pret);
 $pret = str_replace(
     "{fontcount}",
     "In these tables: " .
-        ($ijo == 0 ? $seme : $fontcount." fonts") .
+        ($ijo === "0" ? $seme : $fontcount." fonts") .
         "." .
         ($ijo !== false && $seme !== false
             ? ""
@@ -1638,7 +1707,7 @@ foreach ($styles as $stylum) {
 
         if (isset($globalfonts[$stylum[0] . " old"])) {
             $stfonts = array_merge(
-                $globalfonts[$stylum[0]],
+                $globalfonts[$stylum[0]] ?? [],
                 $globalfonts[$stylum[0] . " old"]
             );
             sort($stfonts);
@@ -1765,9 +1834,33 @@ file_put_contents(
     __DIR__ . "/../" . $thehtml . ".html",
     iconv("ISO-8859-1", "UTF-8", $body)
 );
+if($ijo === false && $seme === false){
+file_put_contents(
+    __DIR__ . "/../" . $anhtml . ".html",
+    iconv("ISO-8859-1", "UTF-8", $home)
+);
+    
+    
+file_put_contents(
+    __DIR__ . "/../input.html",
+    iconv("ISO-8859-1", "UTF-8",$bodystart .
+    $floadcss .
+    $fdiscss .
+    $ffamilcss .
+    $ftabchcss .
+    $pret .
+    $finput .
+    $bodyend )
+);
+    
+    file_put_contents(
+    __DIR__ . "/../info.html",
+    iconv("ISO-8859-1", "UTF-8", $tinfo)
+);
+}
 echo "<li><a href='../" .
     $thehtml .
-    ".html'>Finished</a> " .
+    ".html'>Finished</a> ".(($ijo === false && $seme === false)?"(<a href='../".$anhtml.".html'>".$anhtml."</a>) ":"") .
     (time() - $tmer) .
     "s</li>";
 /*ob_flush();*/
