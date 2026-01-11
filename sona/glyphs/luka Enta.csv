@@ -1,4 +1,4 @@
-a,ucsur,&#xF1900;,a-,a--,ah
+a,ucsur,&#xF1900;,a-,a--,ah,A
 akesi,ucsur,&#xF1901;,akesi&lt;^,akesi&lt;,akesi&lt;v,akesiv,akesi&gt;v,akesi&gt;,akesi&gt;^
 ala,ucsur,&#xF1902;
 alasa,ucsur,&#xF1903;
@@ -45,7 +45,7 @@ loje,ucsur,&#xF192b;
 lon,ucsur,&#xF192c;
 luka,ucsur,&#xF192d;
 lukin,ucsur,&#xF192e;
-lupa,ucsur,&#xF192f;
+lupa,ucsur,&#xF192f;,lupaa
 ma,ucsur,&#xF1930;
 mama,ucsur,&#xF1931;
 mani,ucsur,&#xF1932;
@@ -54,7 +54,7 @@ mi,ucsur,&#xF1934;,mii
 mije,ucsur,&#xF1935;
 moku,ucsur,&#xF1936;
 moli,ucsur,&#xF1937;
-monsi,ucsur,&#xF1938;,monsii
+monsi,ucsur,&#xF1938;,monsii,monsi2
 mu,ucsur,&#xF1939;
 mun,ucsur,&#xF193a;
 musi,ucsur,&#xF193b;
@@ -62,13 +62,13 @@ mute,ucsur,&#xF193c;,20
 nanpa,ucsur,&#xF193d;
 nasa,ucsur,&#xF193e;
 nasin,ucsur,&#xF193f;
-nena,ucsur,&#xF1940;
+nena,ucsur,&#xF1940;,nenaa
 ni,ucsur,&#xF1941;,ni&gt;v,ni&gt;,ni&gt;^,ni^,ni&lt;^,ni&lt;,ni&lt;v
 nimi,ucsur,&#xF1942;
 noka,ucsur,&#xF1943;
 o,ucsur,&#xF1944;
 olin,ucsur,&#xF1945;
-ona,ucsur,&#xF1946;
+ona,ucsur,&#xF1946;,onaa
 open,ucsur,&#xF1947;
 pakala,ucsur,&#xF1948;
 pali,ucsur,&#xF1949;
@@ -88,12 +88,12 @@ sama,ucsur,&#xF1956;
 seli,ucsur,&#xF1957;
 selo,ucsur,&#xF1958;
 seme,ucsur,&#xF1959;
-sewi,ucsur,&#xF195a;,sewii
+sewi,ucsur,&#xF195a;,sewii,sewi2
 sijelo,ucsur,&#xF195b;
 sike,ucsur,&#xF195c;
 sin,ucsur,&#xF195d;
 sina,ucsur,&#xF195e;,sinaa
-sinpin,ucsur,&#xF195f;,sinpinn
+sinpin,ucsur,&#xF195f;,sinpinn,sinpin2
 sitelen,ucsur,&#xF1960;
 sona,ucsur,&#xF1961;
 soweli,ucsur,&#xF1962;,soweli&lt;^,soweli&lt;,soweli&lt;v,soweliv,soweli&gt;v,soweli&gt;,soweli&gt;^,sooweli,sooooweli
@@ -105,7 +105,7 @@ tan,ucsur,&#xF1967;
 taso,ucsur,&#xF1968;
 tawa,ucsur,&#xF1969;,tawaa
 telo,ucsur,&#xF196a;
-tenpo,ucsur,&#xF196b;
+tenpo,ucsur,&#xF196b;,ten
 toki,ucsur,&#xF196c;
 tomo,ucsur,&#xF196d;
 tu,ucsur,&#xF196e;
@@ -120,7 +120,7 @@ weka,ucsur,&#xF1976;
 wile,ucsur,&#xF1977;
 epiku,ucsur,&#xF1983;
 jasima,ucsur,&#xF197f;
-kijetesantakalu,ucsur,&#xF1980;,kijetesantakalu&lt;^,kijetesantakalu&lt;,kijetesantakalu&lt;v,kijetesantakaluv,kijetesantakalu&gt;v,kijetesantakalu&gt;,kijetesantakalu&gt;^,kije tesantakalu,kijejetesantakalu
+kijetesantakalu,ucsur,&#xF1980;,kijetesantakalu&lt;^,kijetesantakalu&lt;,kijetesantakalu&lt;v,kijetesantakaluv,kijetesantakalu&gt;v,kijetesantakalu&gt;,kijetesantakalu&gt;^,kije tesantakalu,kijejetesantakalu,tetoweli
 kin,ucsur,&#xF1979;,kinn
 kipisi,ucsur,&#xF197b;
 ku,ucsur,&#xF1988;
@@ -141,7 +141,7 @@ cartouche extension,ucsur,&#xf1992;
 cartouche interpunct,ucsur,&#xf199c;
 cartouche colon,ucsur,&#xf199d;
 linluwi,,linluwi,linluwii
-su,,su,su2
+su,,su,su2,su3
 te,,te
 to,,to
 kokosila,ucsur,kokosila
@@ -173,3 +173,6 @@ ojuta,,ojuta
 wuwojiti,,wuwojiti
 lesijo,,lesijo
 eliki,,eliki
+cartouche tally marks,,[|&comma;&comma;&comma;&comma;&comma;&comma;&comma;]<br>["*]
+jonke,,jonke
+penpo,,penpo
