@@ -7,15 +7,21 @@ $tmer = time();
 ini_set("output_buffering", "off");
 // Turn off PHP output compression
 ini_set("zlib.output_compression", false);
+/*set_time_limit(120);*/
 
 $thehtml = "all";
 $anhtml="index";
 
 echo '<ul><li><a href="?ijo=4&seme=hand">hand</a></li><li><a href="?ijo=4&seme=uni">uni</a></li><li><a href="?ijo=4&seme=serif">serif</a></li><li><a href="?ijo=4&seme=pxl">pxl</a></li><li><a href="?ijo=4&seme=alt">alt</a></li><li><a href="?ijo=4&seme=nonsp">nonsp</a></li><li><a href="?ijo=4YanuY4&seme=uniYanuYserif&lipu=book.html">book (uni/serif)</a></li><li><a href="?ijo=6&seme=cc0">cc0</a></li><li><a href="?ijo=6&seme=mit">mit</a></li><li><a href="?ijo=6&seme=OFL">OFL</a></li><li><a href="?ijo=6&seme=cc">cc</a></li><li><a href="?ijo=6&seme=fontstruct">fontstruct</a></li><li><a href="?ijo=8&seme=proportional">proportional</a></li><li><a href="?ijo=8&seme=monospaced">monospaced</a></li><li><a href="?ijo=9&seme=yes&lipu=ucsur">ucsur</a></li><li><a href="?ijo=10&seme=yes&lipu=ligatures">ligatures</a></li><li><a href="?ijo=11&seme=yes&lipu=cartouches">cartouches</a></li><li><a href="?ijo=12&seme=yes&lipu=combined glyphs">combined glyphs</a></li><li><a href="?ijo=13&seme=yes&lipu=long pi">long pi</a></li></ul>';
 
+$repo="https://github.com/RetSamys/toki-pona-glyphs/raw/main";
+
 $ijo = false;
 $seme = false;
 $lipu = false;
+$taso=false;
+if(isset($_GET["taso"])||$anhtml=="index1"){$taso=true;}
+if($taso){$repo=__DIR__ . "/../toki-pona-glyphs-main";}
 if (isset($_GET["ijo"])) {
     $isnum = false;
     if (is_numeric($_GET["ijo"])) {
@@ -55,7 +61,7 @@ if (isset($_GET["lipu"]) && !ctype_space(" " . $_GET["lipu"])) {
 $finfo = array_map(
     "str_getcsv",
     file(
-        "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/fontinfo.csv",
+        $repo."/sona/fontinfo.csv",
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
@@ -66,7 +72,7 @@ if ($ijo !== false && $seme !== false) {
     $other = array_map(
         "str_getcsv",
         file(
-            "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/other.csv",
+            $repo."/sona/other.csv",
             FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
         )
     );
@@ -75,7 +81,7 @@ if ($ijo !== false && $seme !== false) {
 $styles = array_map(
     "str_getcsv",
     file(
-        "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/styles.csv",
+        $repo."/sona/styles.csv",
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
@@ -83,7 +89,7 @@ echo "<li>styles.csv " . (time() - $tmer) . "s</li>";
 $wpu = array_map(
     "str_getcsv",
     file(
-        "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/pu.csv",
+        $repo."/sona/pu.csv",
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
@@ -91,7 +97,7 @@ echo "<li>pu.csv " . (time() - $tmer) . "s</li>";
 $wkusuli = array_map(
     "str_getcsv",
     file(
-        "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/kusuli.csv",
+        $repo."/sona/kusuli.csv",
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
@@ -99,7 +105,7 @@ echo "<li>kusuli.csv " . (time() - $tmer) . "s</li>";
 $wkulili = array_map(
     "str_getcsv",
     file(
-        "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/kulili.csv",
+        $repo."/sona/kulili.csv",
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
@@ -107,7 +113,7 @@ echo "<li>kulili.csv " . (time() - $tmer) . "s</li>";
 $wante = array_map(
     "str_getcsv",
     file(
-        "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/ante.csv",
+        $repo."/sona/ante.csv",
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
@@ -115,7 +121,7 @@ echo "<li>ante.csv " . (time() - $tmer) . "s</li>";
 $wnamako = array_map(
     "str_getcsv",
     file(
-        "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/namako.csv",
+        $repo."/sona/namako.csv",
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
@@ -123,7 +129,7 @@ echo "<li>namako.csv " . (time() - $tmer) . "s</li>";
 $wrad = array_map(
     "str_getcsv",
     file(
-        "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/radicals.csv",
+        $repo."/sona/radicals.csv",
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
@@ -131,12 +137,12 @@ echo "<li>radicals.csv " . (time() - $tmer) . "s</li>";
 $pdf = array_map(
     "str_getcsv",
     file(
-        "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/pdf.csv",
+        $repo."/sona/pdf.csv",
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
 echo "<li>pdf.csv " . (time() - $tmer) . "s</li>";
-$glyphs = "https://github.com/RetSamys/toki-pona-glyphs/raw/main/sona/glyphs/";
+$glyphs = $repo."/sona/glyphs/";
 
 /*prepare the different parts of the page*/
 
@@ -153,7 +159,7 @@ html {
 
 body {
     display: table-cell;
-    vertical-align: middle;
+    /*vertical-align: middle;*/
 }
     	body #indivf{
 visibility:hidden;
@@ -164,43 +170,46 @@ visibility:visible;
         h2{
         	text-align:center;
         }
+        h1{opacity:0;}
     </style></head><body><div>
+    <h1>comparison of toki pona fonts</h1>
     <h2>What do you want to see?</h2>
     <a href="all.html">Everything.</a><br>
    <details>
     <summary><b>Font styles</b></summary>
-    <a href="hand.html">handwritten fonts</a><br>
-    <a href="uni.html">fonts with a consistent line width</a><br>
-    <a href="serif.html">fonts with modulated line width</a><br>
-    <a href="pxl.html">block-based fonts</a><br>
-    <a href="alt.html">alternative design/sitelen pona inspired</a><br>
-    <a href="nonsp.html">non-sitelen-pona writing systems</a><br>
-    <a href="book.html">fonts with consistent OR modulated line width</a>
+    <li><a href="hand.html">handwritten fonts</a></li>
+    <li><a href="uni.html">fonts with a consistent line width</a></li>
+    <li><a href="serif.html">fonts with modulated line width</a></li>
+    <li><a href="pxl.html">block-based fonts</a></li>
+    <li><a href="alt.html">alternative design/sitelen pona inspired</a></li>
+    <li><a href="nonsp.html">non-sitelen-pona writing systems</a></li>
+    <li><a href="book.html">fonts with consistent OR modulated line width</a></li>
     </details><details>
 <summary><b>Licenses</b></summary>
-    <a href="cc.html">any Creative Commons license</a><br>
-    <a href="cc0.html">CC0</a><br>
-    <a href="mit.html">MIT</a><br>
-    <a href="ofl.html">OFL</a><br>
-    <a href="fontstruct.html">any Fontstruct license</a>
+    <li><a href="cc.html">any Creative Commons license</a></li>
+    <li><a href="cc0.html">CC0</a></li>
+    <li><a href="mit.html">MIT</a></li>
+    <li><a href="ofl.html">OFL</a></li>
+    <li><a href="fontstruct.html">any Fontstruct license</a></li>
     </details><details>
 <summary><b>Proportions</b></summary>
-    <a href="proportional.html">character width adapts to character</a><br>
-    <a href="monospaced.html">all characters have the same width</a><br>
+    <li><a href="proportional.html">character width adapts to character</a></li>
+    <li><a href="monospaced.html">all characters have the same width</a></li>
     </details><details>
 <summary><b>Features</b></summary>
-<a href="ucsur.html">UCSUR-compliant</a><br>
-    <a href="ligatures.html">ligatures transform typed out words into characters</a><br>
-    <a href="cartouches.html">cartouches are closed boxes around names</a><br>
-    <a href="combined glyphs.html">combined glyphs</a><br>
-    <a href="long pi.html">the underline of &quot;pi&quot; extends underneath other characters</a>
+<li><a href="ucsur.html">UCSUR-compliant</a></li>
+    <li><a href="ligatures.html">ligatures transform typed out words into characters</a></li>
+    <li><a href="cartouches.html">cartouches are closed boxes around names</a></li>
+    <li><a href="combined glyphs.html">combined glyphs</a></li>
+    <li><a href="long pi.html">the underline of &quot;pi&quot; extends underneath other characters</a></li>
     </details>
-    <a href="pdf">The archive</a><br>
+    <a href="pdf">The archive</a><br><a href="https://github.com/RetSamys/toki-pona-glyphs/">The repository</a><br>
     <a href="input.html">Input field with all fonts</a><br>
     <a href="info.html">Font information</a><br>
     <a href="#" onclick="document.body.classList.add(\'indivf\');">Individual fonts</a>
     <br>
-    <select id="indivf" onchange="var tk=document.getElementById(\'indivf\').value;window.location.href=tk+\'.html\';" autocomplete="off">
+    <a href="tukitiki.html">tuki tiki/titi pula fonts</a><br>
+    <select id="indivf" onchange="var tk=document.getElementById(\'indivf\').value;window.location.href=tk+\'.html?singlefont=\'+tk.replaceAll(\' \',\'+\');" autocomplete="off">
     <option value="" selected disabled>select font</option>
     {tablefonts}
     </select></div></body></html>
@@ -284,6 +293,7 @@ body.func tr.func,body.render tr.render,body.save tr.save,body.funcs tr.funcs{di
 .sp tr:nth-child(2),#sona tr:nth-child(1),#features tr:nth-child(1),#features tr:nth-child(2){
     background:white;
     position:sticky;
+    height:auto; 
     top:0;
 }
 #features tr:nth-child(2){top:1.25em;}
@@ -945,7 +955,7 @@ foreach ($finfo as $line) {
     if ($ijo !== false && $seme !== false) {
         $semecontinue = true;
         if ($ijo === "0") {echo $ijo;
-            if ($line[$ijo] == $seme) {
+            if (strtolower($line[$ijo]) == strtolower($seme)) {
                 $semecontinue = false;
             }
         } elseif (
@@ -962,7 +972,7 @@ foreach ($finfo as $line) {
                 if (
                     str_contains(
                         strtolower($line[explode("YanuY", $ijo)[$muteseme]]),
-                        explode("YanuY", $seme)[$muteseme]
+                        strtolower(explode("YanuY", $seme)[$muteseme])
                     )
                 ) {
                     $semecontinue = false;
@@ -983,7 +993,7 @@ foreach ($finfo as $line) {
                 if (
                     !str_contains(
                         strtolower($line[explode("+en+", $ijo)[$muteseme]]),
-                        explode("+en+", $seme)[$muteseme]
+                        strtolower(explode("+en+", $seme)[$muteseme])
                     )
                 ) {
                     $semecontinue = true;
@@ -992,7 +1002,7 @@ foreach ($finfo as $line) {
             }
         } elseif (
             is_numeric($ijo) &&
-            str_contains(strtolower($line[$ijo]), $seme)
+            str_contains(strtolower($line[$ijo]), strtolower($seme))
         ) {
             $semecontinue = false;
         }
@@ -1150,13 +1160,22 @@ foreach ($finfo as $line) {
                 "</td></tr>
         ";
         }
-        $glyph = array_map(
+        if($taso){
+            $glyph = array_map(
+            "str_getcsv",
+            file(
+                $glyphs . $font . ".csv",
+                FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
+            )
+        );
+        }else{$glyph = array_map(
             "str_getcsv",
             file(
                 $glyphs . rawurlencode($font) . ".csv",
                 FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
             )
         );
+        }
         echo "<li>".(file_exists(__DIR__."/../".$font.".html")?"":"<b>")."<a href='?ijo=0&seme=" . $font . "'>". $font ."</a>".(file_exists(__DIR__."/../".$font.".html")?"":"</b>").".csv  " . (time() - $tmer) . "s</li>";
         echo str_pad("", 1024, " ");
         /*echo "<br />";*/
@@ -1862,7 +1881,7 @@ echo "<li><a href='../" .
     $thehtml .
     ".html'>Finished</a> ".(($ijo === false && $seme === false)?"(<a href='../".$anhtml.".html'>".$anhtml."</a>) ":"") .
     (time() - $tmer) .
-    "s</li>";
+    "s</li><script>document.body.style.background='lightgreen';</script>";
 /*ob_flush();*/
 flush();
 ?>
