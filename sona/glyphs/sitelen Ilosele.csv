@@ -1,4 +1,4 @@
-a,ucsur,&#xF1900;,&#xF1900;&zwj;&#xF1900;,&#xF1900;&zwj;&#xF1900;&zwj;&#xF1900;
+a,ucsur,&#xF1900;,&#xF1900;&zwj;&#xF1900;,&#xF1900;&zwj;&#xF1900;&zwj;&#xF1900;,&#xF1900;4
 akesi,ucsur,&#xF1901;
 ala,ucsur,&#xF1902;
 alasa,ucsur,&#xF1903;
@@ -24,7 +24,7 @@ kama,ucsur,&#xF1916;
 kasi,ucsur,&#xF1917;,&#xF1917;1
 ken,ucsur,&#xF1918;
 kepeken,ucsur,&#xF1919;
-kili,ucsur,&#xF191a;
+kili,ucsur,&#xF191a;,&#xF191a;2,&#xF191a;29
 kiwen,ucsur,&#xF191b;
 ko,ucsur,&#xF191c;
 kon,ucsur,&#xF191d;
@@ -58,7 +58,7 @@ monsi,ucsur,&#xF1938;
 mu,ucsur,&#xF1939;
 mun,ucsur,&#xF193a;
 musi,ucsur,&#xF193b;,&#xF193b;1
-mute,ucsur,&#xF193c;
+mute,ucsur,&#xF193c;,&#xF193c;2,&#xF193c;29
 nanpa,ucsur,&#xF193d;
 nasa,ucsur,&#xF193e;
 nasin,ucsur,&#xF193f;
@@ -88,13 +88,13 @@ sama,ucsur,&#xF1956;
 seli,ucsur,&#xF1957;
 selo,ucsur,&#xF1958;
 seme,ucsur,&#xF1959;
-sewi,ucsur,&#xF195a;,&#xF198C;
+sewi,ucsur,&#xF195a;,&#xF198C;,&#xF198C;9
 sijelo,ucsur,&#xF195b;
 sike,ucsur,&#xF195c;
 sin,ucsur,&#xF195d;
 sina,ucsur,&#xF195e;
 sinpin,ucsur,&#xF195f;
-sitelen,ucsur,&#xF1960;
+sitelen,ucsur,&#xF1960;,&#xF1960;2,&#xF1960;29
 sona,ucsur,&#xF1961;
 soweli,ucsur,&#xF1962;
 suli,ucsur,&#xF1963;
@@ -117,53 +117,54 @@ wan,ucsur,&#xF1973;
 waso,ucsur,&#xF1974;
 wawa,ucsur,&#xF1975;
 weka,ucsur,&#xF1976;
-wile,ucsur,&#xF1977;,&#xF1977;1
-epiku,ucsur,&#xF1983;
-jasima,ucsur,&#xF197f;
-kijetesantakalu,ucsur,&#xF1980;
+wile,ucsur,&#xF1977;,&#xF1977;1,&#xF1977;2,&#xF1977;29
+epiku,ucsur,&#xF1983;,&#xF1983;9
+kokosila,ucsur,&#xF1984;,&#xF1984;9
+jasima,ucsur,&#xF197f;,&#xF197f;9
+kijetesantakalu,ucsur,&#xF1980;,&#xF1980;9
 kin,ucsur,&#xF1979;
-kipisi,ucsur,&#xF197b;,&#xF197b;1
+kipisi,ucsur,&#xF197b;,&#xF197b;1,&#xF197b;9
 ku,ucsur,&#xF1988;
-lanpan,ucsur,&#xF1985;
-leko,ucsur,&#xF197c;
-meso,ucsur,&#xF1982;
-misikeke,ucsur,&#xF1987;
-monsuta,ucsur,&#xF197d;
-n,ucsur,&#xF1986;
+lanpan,ucsur,&#xF1985;,&#xF1985;9
+leko,ucsur,&#xF197c;,&#xF197c;9
+meso,ucsur,&#xF1982;,&#xF1982;9
+misikeke,ucsur,&#xF1987;,&#xF1987;9
+monsuta,ucsur,&#xF197d;,&#xF197d;9
+n,ucsur,&#xF1986;,&#xF1986;&zwj;&#xF1986;&zwj;&#xF1986,&#xF1986;&zwj;&#xF1986;,&#xF1986;4
 namako,ucsur,&#xF1978;
 oko,ucsur,&#xF197a;
-soko,ucsur,&#xF1981;
+soko,ucsur,&#xF1981;,&#xF1981;2
 tonsi,ucsur,&#xF197e;
-majuna,ucsur,&#xF19a2;
+majuna,ucsur,&#xF19a2;,&#xF19a2;9
 cartouche open,ucsur,&#xf1990;
 cartouche end,ucsur,&#xf1991;
 cartouche extension,ucsur,&#xf1992;
 cartouche interpunct,ucsur,&#xf199c;
 cartouche colon,ucsur,&#xf199d;;
-isipin,ucsur,&#xF19A7;
-kamalawala,ucsur,&#xF19A8;
-kapesi,ucsur,&#xF19A9;
-melome,ucsur,&#xF19AA;
-mijomi,ucsur,&#xF19AB;
-misa,ucsur,&#xF19AC;
-nimisin,ucsur,&#xF19AD;
-nja,ucsur,&#xF19AE;
-oke,ucsur,&#xF19AF;
-omekapo,ucsur,&#xF19B0;
-puwa,ucsur,&#xF19B1;
-san,ucsur,&#xF19B2;
-taki,ucsur,&#xF19B3;
-unu,ucsur,&#xF19B6;
-usawi,ucsur,&#xF19B7;
-wa,ucsur,&#xF19B8;
-wuwojiti,ucsur,&#xF19B9;
-yupekosi,ucsur,&#xF19BA;
-cartouche tally marks,ucsur,&#xf1990;&#xf199E;&#xf1991;
-linluwi,ucsur,&#xF19A4;
-apeja,ucsur,&#xF19A1;,&#xF19A1;1
-pake,ucsur,&#xF19A0;
-kiki,ucsur,&#xF19A5;
-su,ucsur,&#xF19A6;
+isipin,ucsur,&#xF19A7;,&#xF19A7;9,&#xF19A7;2,&#xF19A7;29
+kamalawala,ucsur,&#xF19A8;,&#xF19A8;9
+kapesi,ucsur,&#xF19A9;,&#xF19A9;9,&#xF19A9;2,&#xF19A9;29
+melome,ucsur,&#xF19AA;,&#xF19AA;9
+mijomi,ucsur,&#xF19AB;,&#xF19AB;9
+misa,ucsur,&#xF19AC;,&#xF19AC;9
+nimisin,ucsur,&#xF19AD;,&#xF19AD;9
+nja,ucsur,&#xF19AE;,&#xF19AE;9
+oke,ucsur,&#xF19AF;,&#xF19AF;9
+omekapo,ucsur,&#xF19B0;,&#xF19B0;9
+puwa,ucsur,&#xF19B1;,&#xF19B1;9
+san,ucsur,&#xF19B2;,&#xF19B2;9
+taki,ucsur,&#xF19B3;,&#xF19B3;9
+unu,ucsur,&#xF19B6;,&#xF19B6;9
+usawi,ucsur,&#xF19B7;,&#xF19B7;9,&#xF19B7;2,&#xF19B7;29
+wa,ucsur,&#xF19B8;,&#xF19B8;9
+wuwojiti,ucsur,&#xF19B9;,&#xF19B9;9,&#xF19B9;92
+yupekosi,ucsur,&#xF19BA;,&#xF19BA;9
+cartouche tally marks,ucsur,&#xf1990;&#xf199E;&#xf199E;&#xf199E;&#xf199E;&#xf199E;&#xf1991;
+linluwi,ucsur,&#xF19A4;,&#xF19A4;9
+apeja,ucsur,&#xF19A1;,&#xF19A1;1,&#xF19A1;9
+pake,ucsur,&#xF19A0;,&#xF19A0;9
+kiki,ucsur,&#xF19A5;,&#xF19A5;9
+su,ucsur,&#xF19A6;,&#xF19A6;9
 arrow radical,ucsur,&#xF1C80;
 arrowhead radical,ucsur,&#xF1C81;
 leftwards or downwards<br>arrowhead radical,ucsur,&#xF1C82;
@@ -193,12 +194,18 @@ vertical line radical,ucsur,&#xF1C99;
 horizontal line radical,ucsur,&#xF1C9A;
 exclamation line radical,ucsur,&#xF1C9B;
 comma radical,ucsur,&#xF1C9C;
-soto,,soto
-teje,,teje
-penpo,,penpo
-jule,,jule
-ete,,ete,ete2
-pokasi,,pokasi
-owe,,owe
-me,,me
-pamo,,pamo
+soto,,LsotoL,LsotoL9
+teje,,LtejeL,LtejeL9
+penpo,,LpenpoL,LpenpoL9
+jule,,LjuleL,LjuleL9
+ete,,LeteL,LeteL2,Lete9
+pokasi,,LpokasiL,LpokasiL9
+owe,,LoweL,LoweL9
+me,,LmeL,LmeL9
+pamo,,Lpamo,Lpamo9
+iki,,LikiL
+kan,,LkanL
+pata,,LpataL
+po,,LpoL
+kapa,,LkapaL,LkapaL2
+tuli,,tulia2
