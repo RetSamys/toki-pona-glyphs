@@ -63,7 +63,7 @@ nanpa,ucsur,&#xF193d;
 nasa,ucsur,&#xF193e;
 nasin,ucsur,&#xF193f;
 nena,ucsur,&#xF1940;
-ni,ucsur,&#xF1941;,&#xF1989;,&#xF198A;,&#xF198B;,&#xF198B;<v,&#xF198B;>v,&#xF198B;^>,&#xF198B;^<
+ni,ucsur,&#xF1941;,&#xF1989;,&#xF198A;,&#xF198B;,&#xF1941;<v,&#xF1941;>v,&#xF1941;^>,&#xF1941;^<
 nimi,ucsur,&#xF1942;
 noka,ucsur,&#xF1943;
 o,ucsur,&#xF1944;
@@ -198,11 +198,11 @@ soto,,LsotoL,LsotoL9
 teje,,LtejeL,LtejeL9
 penpo,,LpenpoL,LpenpoL9
 jule,,LjuleL,LjuleL9
-ete,,LeteL,LeteL2,Lete9
+ete,,LeteL,LeteL2,LeteL9
 pokasi,,LpokasiL,LpokasiL9
 owe,,LoweL,LoweL9
 me,,LmeL,LmeL9
-pamo,,Lpamo,Lpamo9
+pamo,,Lpamo,LpamoL9
 iki,,LikiL
 kan,,LkanL
 pata,,LpataL
