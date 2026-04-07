@@ -1,7 +1,13 @@
 <?php
-ini_set("display_errors", 1);
-ini_set("display_startup_errors", 1);
-error_reporting(E_ALL);
+if(isset($ale)){
+	ini_set("display_errors", 0);
+	ini_set("display_startup_errors", 0);
+	error_reporting(0);
+}else{
+    ini_set("display_errors", 1);
+	ini_set("display_startup_errors", 1);
+	error_reporting(E_ALL);
+}
 $tmer = time();
 // Turn off output buffering
 ini_set("output_buffering", "off");
@@ -12,15 +18,30 @@ ini_set("zlib.output_compression", false);
 $thehtml = "all";
 $anhtml="index";
 
-echo '<ul><li><a href="?ijo=4&seme=hand">hand</a></li><li><a href="?ijo=4&seme=uni">uni</a></li><li><a href="?ijo=4&seme=serif">serif</a></li><li><a href="?ijo=4&seme=pxl">pxl</a></li><li><a href="?ijo=4&seme=alt">alt</a></li><li><a href="?ijo=4&seme=nonsp">nonsp</a></li><li><a href="?ijo=4YanuY4&seme=uniYanuYserif&lipu=book.html">book (uni/serif)</a></li><li><a href="?ijo=6&seme=cc0">cc0</a></li><li><a href="?ijo=6&seme=mit">mit</a></li><li><a href="?ijo=6&seme=OFL">OFL</a></li><li><a href="?ijo=6&seme=cc">cc</a></li><li><a href="?ijo=6&seme=fontstruct">fontstruct</a></li><li><a href="?ijo=8&seme=proportional">proportional</a></li><li><a href="?ijo=8&seme=monospaced">monospaced</a></li><li><a href="?ijo=9&seme=yes&lipu=ucsur">ucsur</a></li><li><a href="?ijo=10&seme=yes&lipu=ligatures">ligatures</a></li><li><a href="?ijo=11&seme=yes&lipu=cartouches">cartouches</a></li><li><a href="?ijo=12&seme=yes&lipu=combined glyphs">combined glyphs</a></li><li><a href="?ijo=13&seme=yes&lipu=long pi">long pi</a></li></ul>';
-
 $repo="https://github.com/RetSamys/toki-pona-glyphs/raw/main";
 
-$ijo = false;
-$seme = false;
-$lipu = false;
-$taso=false;
-if(isset($_GET["taso"])||$anhtml=="index1"){$taso=true;}
+if(isset($ale)){}else{$ale=0;}
+
+if ($ale===0 && isset($_GET["ale"])){
+    /*
+    0: don't generate all pages
+    1: generate all pages EXCEPT individual fonts (unless the page for the font doesn't exist)
+    2: generate all pages INCLUDING individual fonts - must be set manually to 2 in the URL
+    3: don't generate all pages, only pass along the information that this page is part of a process in which all pages get generated. This outputs less echo statements
+    */
+    if($_GET["ale"]==="2"){$ale=2;}
+    if($_GET["ale"]==="3"){$ale=3;}
+    else{$ale=1;}
+}
+if($ale!=3){echo '<ul><li><a href="?ijo=4&seme=hand">hand</a></li><li><a href="?ijo=4&seme=uni">uni</a></li><li><a href="?ijo=4&seme=serif">serif</a></li><li><a href="?ijo=4&seme=pxl">pxl</a></li><li><a href="?ijo=4&seme=alt">alt</a></li><li><a href="?ijo=4&seme=nonsp">nonsp</a></li><li><a href="?ijo=4YanuY4&seme=uniYanuYserif&lipu=book.html">book (uni/serif)</a></li><li><a href="?ijo=6&seme=cc0">cc0</a></li><li><a href="?ijo=6&seme=mit">mit</a></li><li><a href="?ijo=6&seme=OFL">OFL</a></li><li><a href="?ijo=6&seme=cc">cc</a></li><li><a href="?ijo=6&seme=fontstruct">fontstruct</a></li><li><a href="?ijo=8&seme=proportional">proportional</a></li><li><a href="?ijo=8&seme=monospaced">monospaced</a></li><li><a href="?ijo=9&seme=yes&lipu=ucsur">ucsur</a></li><li><a href="?ijo=10&seme=yes&lipu=ligatures">ligatures</a></li><li><a href="?ijo=11&seme=yes&lipu=cartouches">cartouches</a></li><li><a href="?ijo=12&seme=yes&lipu=combined glyphs">combined glyphs</a></li><li><a href="?ijo=13&seme=yes&lipu=long pi">long pi</a></li></ul>';}
+
+if(isset($ijo)){}else{$ijo = false;}
+if(isset($seme)){}else{$seme = false;}
+if(isset($lipu)){}else{$lipu = false;}
+if(isset($taso)){}else{$taso=true;}
+if(isset($missingfont)){}else{$missingfont=[];}
+/*$taso=false;
+if(isset($_GET["taso"])||$anhtml=="index1"){$taso=true;}*/
 if($taso){$repo=__DIR__ . "/../toki-pona-glyphs-main";}
 if (isset($_GET["ijo"])) {
     $isnum = false;
@@ -65,7 +86,8 @@ $finfo = array_map(
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
-echo "<li>fontinfo.csv " . (time() - $tmer) . "s</li>";
+if($ale!=3){echo "<li>fontinfo.csv " . (time() - $tmer) . "s</li>";}
+
 if ($ijo !== false && $seme !== false) {
     $other = [];
 } else {
@@ -76,7 +98,7 @@ if ($ijo !== false && $seme !== false) {
             FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
         )
     );
-    echo "<li>other.csv " . (time() - $tmer) . "s</li>";
+    if($ale!=3){echo "<li>other.csv " . (time() - $tmer) . "s</li>";}
 }
 $styles = array_map(
     "str_getcsv",
@@ -85,7 +107,7 @@ $styles = array_map(
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
-echo "<li>styles.csv " . (time() - $tmer) . "s</li>";
+if($ale!=3){echo "<li>styles.csv " . (time() - $tmer) . "s</li>";}
 $wpu = array_map(
     "str_getcsv",
     file(
@@ -93,7 +115,7 @@ $wpu = array_map(
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
-echo "<li>pu.csv " . (time() - $tmer) . "s</li>";
+if($ale!=3){echo "<li>pu.csv " . (time() - $tmer) . "s</li>";}
 $wkusuli = array_map(
     "str_getcsv",
     file(
@@ -101,7 +123,7 @@ $wkusuli = array_map(
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
-echo "<li>kusuli.csv " . (time() - $tmer) . "s</li>";
+if($ale!=3){echo "<li>kusuli.csv " . (time() - $tmer) . "s</li>";}
 $wkulili = array_map(
     "str_getcsv",
     file(
@@ -109,7 +131,7 @@ $wkulili = array_map(
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
-echo "<li>kulili.csv " . (time() - $tmer) . "s</li>";
+if($ale!=3){echo "<li>kulili.csv " . (time() - $tmer) . "s</li>";}
 $wante = array_map(
     "str_getcsv",
     file(
@@ -117,7 +139,7 @@ $wante = array_map(
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
-echo "<li>ante.csv " . (time() - $tmer) . "s</li>";
+if($ale!=3){echo "<li>ante.csv " . (time() - $tmer) . "s</li>";}
 $wnamako = array_map(
     "str_getcsv",
     file(
@@ -125,7 +147,7 @@ $wnamako = array_map(
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
-echo "<li>namako.csv " . (time() - $tmer) . "s</li>";
+if($ale!=3){echo "<li>namako.csv " . (time() - $tmer) . "s</li>";}
 $wrad = array_map(
     "str_getcsv",
     file(
@@ -133,7 +155,7 @@ $wrad = array_map(
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
-echo "<li>radicals.csv " . (time() - $tmer) . "s</li>";
+if($ale!=3){echo "<li>radicals.csv " . (time() - $tmer) . "s</li>";}
 $pdf = array_map(
     "str_getcsv",
     file(
@@ -141,7 +163,7 @@ $pdf = array_map(
         FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES
     )
 );
-echo "<li>pdf.csv " . (time() - $tmer) . "s</li>";
+if($ale!=3){echo "<li>pdf.csv " . (time() - $tmer) . "s</li>";}
 $glyphs = $repo."/sona/glyphs/";
 
 /*prepare the different parts of the page*/
@@ -879,6 +901,7 @@ $globalwords = [];
 $globalfonts = [];
 $fcount = 0;
 
+if($ale!=3){
 //Flush (send) the output buffer and turn off output buffering
 while (@ob_end_flush());
 // Implicitly flush the buffer(s)
@@ -890,7 +913,7 @@ echo str_pad("", 1024, " ");
 
 /*ob_flush();*/
 flush();
-/*get main font info*/ echo "<p>Getting glyphs from fonts</p><ol reversed>";
+/*get main font info*/ echo "<p>Getting glyphs from fonts</p><ol reversed>";}
 foreach ($finfo as $line) {
     if ($line == [] || ctype_space($line[0] . " ")) {
         continue;
@@ -954,7 +977,7 @@ foreach ($finfo as $line) {
 
     if ($ijo !== false && $seme !== false) {
         $semecontinue = true;
-        if ($ijo === "0") {echo $ijo;
+        if ($ijo === "0") {echo $ijo." ";
             if (strtolower($line[$ijo]) == strtolower($seme)) {
                 $semecontinue = false;
             }
@@ -1007,7 +1030,7 @@ foreach ($finfo as $line) {
             $semecontinue = false;
         }
         if ($semecontinue) {
-            echo "<li style='opacity:.5;'><a href='?ijo=0&seme=" . $line[0] . "'>". $line[0] ."</a>.csv IGNORED</li>";
+            if($ale!=3){echo "<li style='opacity:.5;'><a href='?ijo=0&seme=" . $line[0] . "'>". $line[0] ."</a>.csv IGNORED</li>";}
             continue;
         }
     }
@@ -1176,12 +1199,18 @@ foreach ($finfo as $line) {
             )
         );
         }
-        echo "<li>".(file_exists(__DIR__."/../".$font.".html")?"":"<b>")."<a href='?ijo=0&seme=" . $font . "'>". $font ."</a>".(file_exists(__DIR__."/../".$font.".html")?"":"</b>").".csv  " . (time() - $tmer) . "s</li>";
+        if($ale!=3){
+            if (file_exists(__DIR__."/../".$font.".html")){
+            	echo "<li><a href='?ijo=0&seme=" . $font . "'>". $font ."</a>.csv  " . (time() - $tmer) . "s</li>";
+            }else{
+                echo "<li><b><a href='?ijo=0&seme=" . $font . "'>". $font ."</a></b>.csv  " . (time() - $tmer) . "s</li>";
+                $missingfont[]=$font;
+            }
         echo str_pad("", 1024, " ");
         /*echo "<br />";*/
 
         /*ob_flush();*/
-        flush();
+        flush();}
         foreach ($glyph as $cell) {
             $globalwords[$cell[0]][explode(" ", $style)[0]][$font]["class"] =
                 $cell[1];
@@ -1394,7 +1423,7 @@ foreach ($finfo as $line) {
         ";
     }
 }
-echo "</ol><p>Done.</p>";
+if($ale!=3){echo "</ol><p>Done.</p>";}
 
 uksort($globalwords, "strnatcasecmp");
 $words = array_keys($globalwords);
@@ -1877,11 +1906,124 @@ file_put_contents(
     iconv("ISO-8859-1", "UTF-8", $tinfo)
 );
 }
-echo "<li><a href='../" .
+
+echo (($ale!=3)?"<li><a href='../":" ") .
     $thehtml .
-    ".html'>Finished</a> ".(($ijo === false && $seme === false)?"(<a href='../".$anhtml.".html'>".$anhtml."</a>) ":"") .
+    (($ale!=3)?".html'>Finished</a> ".(($ijo === false && $seme === false)?"(<a href='../".$anhtml.".html'>".$anhtml."</a>) ":""):" ") .
     (time() - $tmer) .
-    "s</li><script>document.body.style.background='lightgreen';</script>";
+    (($ale!=3)?"s</li>":"");
+
+if($ale===1||$ale===2){
+    $aleopen=$ale;
+    $ale=3;
+$ijo=4;
+$seme="hand";
+$lipu=false;
+include __FILE__;
+$ijo=4;
+$seme="uni";
+$lipu=false;
+include __FILE__;
+$ijo=4;
+$seme="serif";
+$lipu=false;
+include __FILE__;
+$ijo=4;
+$seme="pxl";
+$lipu=false;
+include __FILE__;
+$ijo=4;
+$seme="alt";
+$lipu=false;
+include __FILE__;
+$ijo=4;
+$seme="nonsp";
+$lipu=false;
+include __FILE__;
+$ijo="4YanuY4";
+$seme="uniYanuYserif";
+$lipu="book.html";
+$lipu=false;
+include __FILE__;
+$ijo=6;
+$seme="cc0";
+$lipu=false;
+include __FILE__;
+$ijo=6;
+$seme="mit";
+$lipu=false;
+include __FILE__;
+$ijo=6;
+$seme="OFL";
+$lipu=false;
+include __FILE__;
+$ijo=6;
+$seme="cc";
+$lipu=false;
+include __FILE__;
+$ijo=6;
+$seme="fontstruct";
+$lipu=false;
+include __FILE__;
+$ijo=8;
+$seme="proportional";
+$lipu=false;
+include __FILE__;
+$ijo=8;
+$seme="monospaced";
+$lipu=false;
+include __FILE__;
+$ijo=9;
+$seme="yes";
+$lipu="ucsur";
+include __FILE__;
+$ijo=10;
+$seme="yes";
+$lipu="ligatures";
+include __FILE__;
+$ijo=11;
+$seme="yes";
+$lipu="cartouches";
+include __FILE__;
+$ijo=12;
+$seme="yes";
+$lipu="combined glyphs";
+include __FILE__;
+$ijo=13;
+$seme="yes";
+$lipu="long pi";
+include __FILE__;
+    $lipu=false;
+    if($ale!=2){
+        foreach($missingfont as $missed){
+            $ijo=0;
+            $seme=$missed;
+            include __FILE__;
+        }
+    }
+    
+    $ijo=false;
+    $seme=false;
+    $ale=$aleopen;
+}
+
+if($ale==2){
+    echo "<p>ALE2</p>";
+    $aleopen=$ale;
+    $ale=3;
+	foreach ($finfo as $line) {
+    	if ($line == [] || ctype_space($line[0] . " ")) {
+        	continue;
+    	}
+    	$font = $line[0];
+        $ijo=0;
+        $seme=$font;
+        include __FILE__;
+    }
+    $ale=$aleopen;
+}
+
+if($ale!=3){echo "<script>document.body.style.background='lightgreen';</script>";}
 /*ob_flush();*/
 flush();
 ?>
