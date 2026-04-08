@@ -24,9 +24,11 @@ $hw=explode("handwrite",$wk);
 foreach($hw as $line){
     if(str_contains($line,"--sheet-version")){
         if(str_contains($line,'--filename "')){
-            $fname=explode('"',explode('--filename "',$line)[1])[0];
+            $flname=explode('"',explode('--filename "',$line)[1])[0];
+            $fname=$flname;
         }else{
-            $fname=explode(' ',explode('--filename ',$line)[1])[0];
+            $flname=explode(' ',explode('--filename ',$line)[1])[0];
+            $fname=$flname;
         }
         if(str_contains($line,'--family "')){
             $fname=explode('"',explode('--family "',$line)[1])[0];
@@ -34,6 +36,7 @@ foreach($hw as $line){
             $fname=explode(' ',explode('--family ',$line)[1])[0];
         }
         if ( in_array(strtolower($fname),array_map('strtolower',$fontl)) || 
+        in_array("https://github.com/wasokeli/wasokeli.github.io/raw/refs/heads/main/sp-font-maker/".$flname.".ttf",$fontfl) ||
         in_array("https://github.com/wasokeli/wasokeli.github.io/raw/refs/heads/main/sp-font-maker/".rawurlencode($fname).".ttf",$fontfl) || 
         in_array("https://github.com/wasokeli/wasokeli.github.io/raw/refs/heads/main/sp-font-maker/".str_replace(" ","-",str_replace("%20","-",rawurlencode($fname).".ttf")),$fontfl) ){}else{
         $csvline=[
