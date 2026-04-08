@@ -13,7 +13,7 @@ $finfo=array_map('str_getcsv', file($repo."/sona/other.csv"));
 foreach($finfo as $line){
     $fontl[]=$line[0];
 }
-$finfo=array_map('str_getcsv', file($repo."/sona/tuki%20tiki.csv"));
+$finfo=array_map('str_getcsv', file($repo."/sona/tuki tiki.csv"));
 foreach($finfo as $line){
     $fontl[]=$line[0];
 }
